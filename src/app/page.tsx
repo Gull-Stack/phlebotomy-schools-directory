@@ -1,10 +1,24 @@
 import Link from "next/link";
-import { schools } from "@/data/schools";
+import { supabaseAdmin } from "@/lib/supabase";
+import { stateNames } from "@/lib/states";
+import { School } from "@/lib/types";
+import LeadForm from "@/components/LeadForm";
 
-const states = [...new Set(schools.filter(s => !s.national).map(s => s.state_code))].sort();
-const nationalSchools = schools.filter(s => s.national);
+export const revalidate = 3600;
 
-export default function Home() {
+async function getSchools() {
+  const { data } = await supabaseAdmin
+    .from("schools")
+    .select("*")
+    .order("name");
+  return (data || []) as School[];
+}
+
+export default async function Home() {
+  const schools = await getSchools();
+  const states = [...new Set(schools.filter(s => !s.national).map(s => s.state_code))].sort();
+  const nationalSchools = schools.filter(s => s.national);
+
   return (
     <main className="min-h-screen bg-gray-950 text-white">
       {/* Hero */}
@@ -17,7 +31,6 @@ export default function Home() {
             Compare accredited programs, tuition costs, and start your healthcare career in as little as 8 weeks.
           </p>
           
-          {/* Quick Stats */}
           <div className="flex justify-center gap-8 mb-10">
             <div className="text-center">
               <div className="text-4xl font-bold text-red-500">{schools.length}+</div>
@@ -33,12 +46,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA */}
           <Link 
             href="#schools"
             className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition"
           >
-            Browse Schools →
+            Browse Schools
           </Link>
         </div>
       </section>
@@ -47,7 +59,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            🌐 National Online Programs
+            National Online Programs
           </h2>
           <p className="text-gray-400 text-center mb-10">
             Study from anywhere with these accredited online phlebotomy programs
@@ -64,7 +76,7 @@ export default function Home() {
                   {school.name}
                 </h3>
                 <div className="text-gray-400 text-sm mb-4">
-                  {school.program_type === 'online' ? '💻 100% Online' : '🏫 Hybrid'}
+                  {school.program_type === 'online' ? '100% Online' : 'Hybrid'}
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-green-500 font-bold">
@@ -75,7 +87,7 @@ export default function Home() {
                     {school.program_length_display}
                   </span>
                 </div>
-                {school.highlights && (
+                {school.highlights && school.highlights.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {school.highlights.slice(0, 2).map((h, i) => (
                       <span key={i} className="text-xs bg-gray-700 px-2 py-1 rounded">
@@ -94,7 +106,7 @@ export default function Home() {
       <section id="schools" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            📍 Browse by State
+            Browse by State
           </h2>
           
           <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-3">
@@ -115,7 +127,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-gray-900/50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            💉 Why Become a Phlebotomist?
+            Why Become a Phlebotomist?
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -151,36 +163,36 @@ export default function Home() {
       <section className="py-16 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
-            🎓 Get Matched with Schools
+            Get Matched with Schools
           </h2>
           <p className="text-gray-400 mb-8">
-            Enter your zip code and we&apos;ll connect you with accredited programs in your area.
+            Enter your info and we&apos;ll connect you with accredited programs in your area.
           </p>
-          
-          <form className="flex flex-col md:flex-row gap-4 justify-center">
-            <input
-              type="text"
-              placeholder="Enter your zip code"
-              className="bg-gray-800 border border-gray-700 rounded-lg px-6 py-4 text-lg w-full md:w-auto focus:border-red-500 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition"
-            >
-              Find Schools
-            </button>
-          </form>
+          <LeadForm />
+        </div>
+      </section>
+
+      {/* Blog CTA */}
+      <section className="py-12 px-6 bg-gray-900/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-4">Latest from the Blog</h2>
+          <p className="text-gray-400 mb-6">Tips, guides, and career advice for aspiring phlebotomists</p>
+          <Link href="/blog" className="inline-block border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 px-6 rounded-lg transition">
+            Read the Blog
+          </Link>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-10 px-6 bg-gray-900 text-center text-gray-500">
-        <p>© 2026 Phlebotomy Schools Directory. All rights reserved.</p>
+        <p>&copy; 2026 Phlebotomy Schools Directory. All rights reserved.</p>
         <p className="mt-2">
           <Link href="/about" className="hover:text-white">About</Link>
-          {" • "}
+          {" | "}
+          <Link href="/blog" className="hover:text-white">Blog</Link>
+          {" | "}
           <Link href="/contact" className="hover:text-white">Contact</Link>
-          {" • "}
+          {" | "}
           <Link href="/privacy" className="hover:text-white">Privacy</Link>
         </p>
       </footer>
