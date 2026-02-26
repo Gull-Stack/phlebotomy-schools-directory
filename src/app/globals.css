@@ -3,11 +3,13 @@
 @tailwind utilities;
 
 body {
-  background-color: #030712;
-  color: #f9fafb;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
 }
 
 ::selection {
-  background-color: #dc2626;
+  background-color: #578cff;
   color: white;
 }

@@ -32,9 +32,9 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-green-900/30 border border-green-700 rounded-xl p-8 text-center">
-        <p className="text-xl font-bold text-green-400 mb-2">You&apos;re in!</p>
-        <p className="text-gray-300">We&apos;ll connect you with programs in your area.</p>
+      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center shadow-sm">
+        <p className="text-xl font-bold text-green-800 mb-2">You&apos;re in!</p>
+        <p className="text-green-700">We&apos;ll connect you with programs in your area.</p>
       </div>
     );
   }
@@ -46,7 +46,7 @@ export default function LeadForm() {
         placeholder="Your name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="bg-gray-800 border border-gray-700 rounded-lg px-6 py-4 text-lg focus:border-red-500 focus:outline-none"
+        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
       />
       <input
         type="email"
@@ -54,7 +54,7 @@ export default function LeadForm() {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="bg-gray-800 border border-gray-700 rounded-lg px-6 py-4 text-lg focus:border-red-500 focus:outline-none"
+        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
       />
       <input
         type="text"
@@ -62,17 +62,17 @@ export default function LeadForm() {
         maxLength={2}
         value={stateCode}
         onChange={(e) => setStateCode(e.target.value.toUpperCase())}
-        className="bg-gray-800 border border-gray-700 rounded-lg px-6 py-4 text-lg focus:border-red-500 focus:outline-none"
+        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="bg-red-600 hover:bg-red-700 disabled:bg-red-800 text-white font-bold py-4 px-8 rounded-lg text-lg transition"
+        className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-bold py-4 px-8 rounded-full text-lg transition-all hover:shadow-md"
       >
         {status === "loading" ? "Submitting..." : "Find Schools"}
       </button>
       {status === "error" && (
-        <p className="text-red-400 text-sm">Something went wrong. Please try again.</p>
+        <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>
       )}
     </form>
   );

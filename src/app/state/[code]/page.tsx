@@ -36,23 +36,23 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
   const nationalSchools = (natData || []) as School[];
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
-      <header className="bg-gray-900 py-4 px-6">
+    <main className="min-h-screen bg-white text-black">
+      <header className="bg-white border-b border-gray-100 py-4 px-6">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-red-500">Phlebotomy Schools</Link>
-          <nav className="flex gap-6">
-            <Link href="/#schools" className="hover:text-red-500">Browse States</Link>
-            <Link href="/blog" className="hover:text-red-500">Blog</Link>
+          <Link href="/" className="text-2xl font-bold text-blue-600">PhlebGuide</Link>
+          <nav className="flex gap-8">
+            <Link href="/#schools" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Browse States</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Blog</Link>
           </nav>
         </div>
       </header>
 
-      <section className="py-16 px-6 bg-gradient-to-b from-red-900/20 to-gray-950">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Phlebotomy Schools in <span className="text-red-500">{stateName}</span>
+      <section className="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Phlebotomy Schools in <span className="text-blue-600">{stateName}</span>
           </h1>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {stateSchools.length > 0 
               ? `Compare ${stateSchools.length} accredited phlebotomy programs in ${stateName}`
               : `View online programs available in ${stateName}`}
@@ -61,37 +61,37 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       </section>
 
       {stateSchools.length > 0 && (
-        <section className="py-12 px-6">
+        <section className="py-20 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">{stateName} Phlebotomy Programs</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-black">{stateName} Phlebotomy Programs</h2>
+            <div className="grid md:grid-cols-2 gap-8">
               {stateSchools.map(school => (
                 <Link key={school.slug} href={`/school/${school.slug}`}
-                  className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-red-500 transition">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold">{school.name}</h3>
-                    <span className="text-xs bg-gray-700 px-2 py-1 rounded">{school.program_type}</span>
+                  className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-black">{school.name}</h3>
+                    <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">{school.program_type}</span>
                   </div>
-                  <p className="text-gray-400 mb-4">{school.city}, {school.state}</p>
-                  <div className="grid grid-cols-2 gap-4 text-sm mb-4">
+                  <p className="text-gray-600 mb-6 font-medium">{school.city}, {school.state}</p>
+                  <div className="grid grid-cols-2 gap-4 text-sm mb-6">
                     <div>
-                      <span className="text-gray-500">Tuition:</span>
-                      <div className="text-green-500 font-bold">
+                      <span className="text-gray-500 font-medium">Tuition:</span>
+                      <div className="text-green-600 font-bold">
                         ${school.tuition_low.toLocaleString()}
                         {school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
                       </div>
                     </div>
                     <div>
-                      <span className="text-gray-500">Duration:</span>
-                      <div className="font-bold">{school.program_length_display}</div>
+                      <span className="text-gray-500 font-medium">Duration:</span>
+                      <div className="font-bold text-black">{school.program_length_display}</div>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {(school.accreditation || []).map(acc => (
-                      <span key={acc} className="text-xs bg-green-900/50 text-green-400 px-2 py-1 rounded">{acc}</span>
+                      <span key={acc} className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">{acc}</span>
                     ))}
-                    {school.financial_aid && <span className="text-xs bg-blue-900/50 text-blue-400 px-2 py-1 rounded">Financial Aid</span>}
-                    {school.externship_included && <span className="text-xs bg-purple-900/50 text-purple-400 px-2 py-1 rounded">Externship Included</span>}
+                    {school.financial_aid && <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">Financial Aid</span>}
+                    {school.externship_included && <span className="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">Externship Included</span>}
                   </div>
                 </Link>
               ))}
@@ -100,19 +100,19 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
         </section>
       )}
 
-      <section className="py-12 px-6 bg-gray-900/50">
+      <section className="py-20 px-6 bg-blue-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Online Programs Available in {stateName}</h2>
-          <p className="text-gray-400 mb-6">These accredited online programs accept students from {stateName}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-black">Online Programs Available in {stateName}</h2>
+          <p className="text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto">These accredited online programs accept students from {stateName}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {nationalSchools.map(school => (
               <Link key={school.slug} href={`/school/${school.slug}`}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-red-500 transition">
-                <h3 className="text-lg font-bold mb-2">{school.name}</h3>
-                <div className="text-gray-400 text-sm mb-3">{school.program_type}</div>
+                className="bg-white border border-gray-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all">
+                <h3 className="text-lg font-bold mb-3 text-black">{school.name}</h3>
+                <div className="text-gray-500 text-sm mb-4 font-medium">{school.program_type}</div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-green-500 font-bold">${school.tuition_low.toLocaleString()}</span>
-                  <span className="text-gray-400">{school.program_length_display}</span>
+                  <span className="text-green-600 font-bold">${school.tuition_low.toLocaleString()}</span>
+                  <span className="text-gray-500 font-medium">{school.program_length_display}</span>
                 </div>
               </Link>
             ))}
@@ -120,29 +120,40 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
         </div>
       </section>
 
-      <section className="py-12 px-6">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Phlebotomy Requirements in {stateName}</h2>
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-            <p className="text-gray-300 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-black">Phlebotomy Requirements in {stateName}</h2>
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8">
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
               {['CA','NV','LA','WA'].includes(stateCode) ? (
-                <><strong className="text-yellow-500">{stateName} requires phlebotomist licensure.</strong>{" "}You must complete an approved training program and pass a certification exam to work as a phlebotomist in this state.</>
+                <><strong className="text-orange-600">{stateName} requires phlebotomist licensure.</strong>{" "}You must complete an approved training program and pass a certification exam to work as a phlebotomist in this state.</>
               ) : (
                 <>{stateName} does not require state licensure for phlebotomists, but most employers prefer or require national certification (CPT, NCPT, etc.).</>
               )}
             </p>
-            <p className="text-gray-400">Average phlebotomist salary in {stateName}: <strong className="text-green-500">$35,000 - $45,000/year</strong></p>
+            <p className="text-gray-600 text-lg">Average phlebotomist salary in {stateName}: <strong className="text-green-600">$35,000 - $45,000/year</strong></p>
           </div>
         </div>
       </section>
 
-      <footer className="py-10 px-6 bg-gray-900 text-center text-gray-500">
-        <p>&copy; 2026 Phlebotomy Schools Directory</p>
-        <p className="mt-2">
-          <Link href="/" className="hover:text-white">Home</Link>{" | "}
-          <Link href="/blog" className="hover:text-white">Blog</Link>{" | "}
-          <Link href="/about" className="hover:text-white">About</Link>
-        </p>
+      <footer className="py-16 px-6 bg-gray-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <Link href="/" className="text-3xl font-bold text-white">PhlebGuide</Link>
+            <p className="mt-4 text-gray-300 text-lg">
+              Your trusted guide to finding accredited phlebotomy training programs
+            </p>
+          </div>
+          <div className="flex justify-center gap-8 mb-8">
+            <Link href="/about" className="text-gray-300 hover:text-white font-medium transition-colors">About</Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white font-medium transition-colors">Blog</Link>
+            <Link href="/contact" className="text-gray-300 hover:text-white font-medium transition-colors">Contact</Link>
+            <Link href="/privacy" className="text-gray-300 hover:text-white font-medium transition-colors">Privacy</Link>
+          </div>
+          <div className="text-center text-gray-400 text-sm border-t border-gray-700 pt-8">
+            <p>&copy; 2026 PhlebGuide. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </main>
   );

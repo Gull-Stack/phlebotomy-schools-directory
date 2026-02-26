@@ -20,35 +20,46 @@ export default async function Home() {
   const nationalSchools = schools.filter(s => s.national);
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main className="min-h-screen bg-white text-black">
+      {/* Header Navigation */}
+      <header className="bg-white border-b border-gray-100 py-4 px-6">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold text-blue-600">PhlebGuide</Link>
+          <nav className="flex gap-8">
+            <Link href="/#schools" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Browse States</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Blog</Link>
+          </nav>
+        </div>
+      </header>
+
       {/* Hero */}
-      <section className="relative py-20 px-6 text-center bg-gradient-to-b from-red-900/20 to-gray-950">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Find <span className="text-red-500">Phlebotomy Schools</span> Near You
+      <section className="py-24 px-6 text-center bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            Find <span className="text-blue-600">Phlebotomy Schools</span> Near You
           </h1>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Compare accredited programs, tuition costs, and start your healthcare career in as little as 8 weeks.
           </p>
           
-          <div className="flex justify-center gap-8 mb-10">
+          <div className="flex justify-center gap-12 mb-16">
             <div className="text-center">
-              <div className="text-4xl font-bold text-red-500">{schools.length}+</div>
-              <div className="text-gray-400">Schools Listed</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600">{schools.length}+</div>
+              <div className="text-gray-500 font-medium">Schools Listed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-red-500">$37K</div>
-              <div className="text-gray-400">Avg Salary</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600">$37K</div>
+              <div className="text-gray-500 font-medium">Avg Salary</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-red-500">8 Weeks</div>
-              <div className="text-gray-400">Fastest Program</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600">8 Weeks</div>
+              <div className="text-gray-500 font-medium">Fastest Program</div>
             </div>
           </div>
 
           <Link 
             href="#schools"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-10 rounded-full text-lg transition-all hover:shadow-lg transform hover:scale-105"
           >
             Browse Schools
           </Link>
@@ -56,41 +67,41 @@ export default async function Home() {
       </section>
 
       {/* National Online Programs */}
-      <section className="py-16 px-6 bg-gray-900/50">
+      <section className="py-20 px-6 bg-blue-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
             National Online Programs
           </h2>
-          <p className="text-gray-400 text-center mb-10">
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             Study from anywhere with these accredited online phlebotomy programs
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {nationalSchools.map(school => (
               <Link 
                 key={school.slug}
                 href={`/school/${school.slug}`}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 hover:border-red-500 transition group"
+                className="bg-white border border-gray-100 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all group"
               >
-                <h3 className="text-xl font-bold mb-2 group-hover:text-red-500">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
                   {school.name}
                 </h3>
-                <div className="text-gray-400 text-sm mb-4">
+                <div className="text-gray-500 text-sm mb-6 font-medium">
                   {school.program_type === 'online' ? '100% Online' : 'Hybrid'}
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-green-500 font-bold">
+                <div className="flex justify-between text-sm mb-4">
+                  <span className="text-green-600 font-bold">
                     ${school.tuition_low.toLocaleString()}
                     {school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
                   </span>
-                  <span className="text-gray-400">
+                  <span className="text-gray-500 font-medium">
                     {school.program_length_display}
                   </span>
                 </div>
                 {school.highlights && school.highlights.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {school.highlights.slice(0, 2).map((h, i) => (
-                      <span key={i} className="text-xs bg-gray-700 px-2 py-1 rounded">
+                      <span key={i} className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">
                         {h}
                       </span>
                     ))}
@@ -103,18 +114,21 @@ export default async function Home() {
       </section>
 
       {/* Browse by State */}
-      <section id="schools" className="py-16 px-6">
+      <section id="schools" className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
             Browse by State
           </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+            Find accredited phlebotomy programs in your state
+          </p>
           
-          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-3">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4">
             {states.map(state => (
               <Link
                 key={state}
                 href={`/state/${state.toLowerCase()}`}
-                className="bg-gray-800 hover:bg-red-600 rounded-lg py-3 text-center font-bold transition"
+                className="bg-gray-100 hover:bg-blue-600 hover:text-white rounded-2xl py-4 text-center font-bold transition-all hover:shadow-md transform hover:scale-105"
               >
                 {state}
               </Link>
@@ -124,34 +138,37 @@ export default async function Home() {
       </section>
 
       {/* Why Phlebotomy */}
-      <section className="py-16 px-6 bg-gray-900/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+      <section className="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-black">
             Why Become a Phlebotomist?
           </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+            Start your healthcare career with these compelling advantages
+          </p>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-500">Fast Training</h3>
-              <p className="text-gray-300">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">Fast Training</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Most programs take just 4-12 weeks. You could be working in healthcare within 2 months.
               </p>
             </div>
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-500">No Degree Required</h3>
-              <p className="text-gray-300">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">No Degree Required</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
                 A high school diploma or GED is all you need to start. No college debt necessary.
               </p>
             </div>
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-500">High Demand</h3>
-              <p className="text-gray-300">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">High Demand</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
                 22% job growth expected. Hospitals, labs, and clinics are always hiring phlebotomists.
               </p>
             </div>
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-500">Good Pay + Benefits</h3>
-              <p className="text-gray-300">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold mb-4 text-blue-600">Good Pay + Benefits</h3>
+              <p className="text-gray-700 text-lg leading-relaxed">
                 Average salary of $37,380/year with full benefits. Top earners make $52K+.
               </p>
             </div>
@@ -160,12 +177,12 @@ export default async function Home() {
       </section>
 
       {/* Lead Capture */}
-      <section className="py-16 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Get Matched with Schools
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Enter your info and we&apos;ll connect you with accredited programs in your area.
           </p>
           <LeadForm />
@@ -173,28 +190,35 @@ export default async function Home() {
       </section>
 
       {/* Blog CTA */}
-      <section className="py-12 px-6 bg-gray-900/50">
+      <section className="py-20 px-6 bg-blue-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Latest from the Blog</h2>
-          <p className="text-gray-400 mb-6">Tips, guides, and career advice for aspiring phlebotomists</p>
-          <Link href="/blog" className="inline-block border border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-bold py-3 px-6 rounded-lg transition">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Latest from the Blog</h2>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Tips, guides, and career advice for aspiring phlebotomists</p>
+          <Link href="/blog" className="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full text-lg transition-all hover:shadow-md">
             Read the Blog
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-6 bg-gray-900 text-center text-gray-500">
-        <p>&copy; 2026 Phlebotomy Schools Directory. All rights reserved.</p>
-        <p className="mt-2">
-          <Link href="/about" className="hover:text-white">About</Link>
-          {" | "}
-          <Link href="/blog" className="hover:text-white">Blog</Link>
-          {" | "}
-          <Link href="/contact" className="hover:text-white">Contact</Link>
-          {" | "}
-          <Link href="/privacy" className="hover:text-white">Privacy</Link>
-        </p>
+      <footer className="py-16 px-6 bg-gray-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <Link href="/" className="text-3xl font-bold text-white">PhlebGuide</Link>
+            <p className="mt-4 text-gray-300 text-lg">
+              Your trusted guide to finding accredited phlebotomy training programs
+            </p>
+          </div>
+          <div className="flex justify-center gap-8 mb-8">
+            <Link href="/about" className="text-gray-300 hover:text-white font-medium transition-colors">About</Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white font-medium transition-colors">Blog</Link>
+            <Link href="/contact" className="text-gray-300 hover:text-white font-medium transition-colors">Contact</Link>
+            <Link href="/privacy" className="text-gray-300 hover:text-white font-medium transition-colors">Privacy</Link>
+          </div>
+          <div className="text-center text-gray-400 text-sm border-t border-gray-700 pt-8">
+            <p>&copy; 2026 PhlebGuide. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </main>
   );

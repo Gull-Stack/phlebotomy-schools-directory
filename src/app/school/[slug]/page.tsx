@@ -32,115 +32,115 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
   if (!school) notFound();
   
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
-      <header className="bg-gray-900 py-4 px-6">
+    <main className="min-h-screen bg-white text-black">
+      <header className="bg-white border-b border-gray-100 py-4 px-6">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold text-red-500">Phlebotomy Schools</Link>
-          <nav className="flex gap-6">
-            <Link href="/#schools" className="hover:text-red-500">Browse States</Link>
-            <Link href="/blog" className="hover:text-red-500">Blog</Link>
+          <Link href="/" className="text-2xl font-bold text-blue-600">PhlebGuide</Link>
+          <nav className="flex gap-8">
+            <Link href="/#schools" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Browse States</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Blog</Link>
           </nav>
         </div>
       </header>
 
-      <div className="bg-gray-900/50 py-3 px-6">
-        <div className="max-w-6xl mx-auto text-sm text-gray-400">
-          <Link href="/" className="hover:text-white">Home</Link>
+      <div className="bg-blue-50 py-4 px-6">
+        <div className="max-w-6xl mx-auto text-sm text-gray-600">
+          <Link href="/" className="hover:text-blue-600 font-medium">Home</Link>
           {" / "}
           {!school.national && (
             <>
-              <Link href={`/state/${school.state_code.toLowerCase()}`} className="hover:text-white">
+              <Link href={`/state/${school.state_code.toLowerCase()}`} className="hover:text-blue-600 font-medium">
                 {stateNames[school.state_code] || school.state}
               </Link>
               {" / "}
             </>
           )}
-          <span className="text-white">{school.name}</span>
+          <span className="text-black font-medium">{school.name}</span>
         </div>
       </div>
 
-      <section className="py-12 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-start justify-between mb-6">
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-start justify-between mb-8">
             <div>
-              <h1 className="text-4xl font-bold mb-2">{school.name}</h1>
-              <p className="text-xl text-gray-400">{school.city}, {school.state}</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{school.name}</h1>
+              <p className="text-xl md:text-2xl text-gray-600">{school.city}, {school.state}</p>
             </div>
-            <span className={`px-4 py-2 rounded-full text-sm font-bold ${
-              school.program_type === 'online' ? 'bg-blue-600' :
-              school.program_type === 'hybrid' ? 'bg-purple-600' : 'bg-green-600'
+            <span className={`px-6 py-3 rounded-full text-sm font-bold ${
+              school.program_type === 'online' ? 'bg-blue-100 text-blue-700' :
+              school.program_type === 'hybrid' ? 'bg-purple-100 text-purple-700' : 'bg-green-100 text-green-700'
             }`}>
               {school.program_type === 'online' ? 'Online' :
                school.program_type === 'hybrid' ? 'Hybrid' : 'In-Person'}
             </span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-gray-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-green-500">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-green-600">
                 ${school.tuition_low.toLocaleString()}
                 {school.tuition_high > school.tuition_low && (
                   <span className="text-lg"> - ${school.tuition_high.toLocaleString()}</span>
                 )}
               </div>
-              <div className="text-gray-400 text-sm">Tuition</div>
+              <div className="text-gray-500 text-sm font-medium">Tuition</div>
             </div>
-            <div className="bg-gray-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-red-500">{school.program_length_display}</div>
-              <div className="text-gray-400 text-sm">Duration</div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-blue-600">{school.program_length_display}</div>
+              <div className="text-gray-500 text-sm font-medium">Duration</div>
             </div>
-            <div className="bg-gray-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-blue-500">{(school.accreditation || []).join(", ") || "N/A"}</div>
-              <div className="text-gray-400 text-sm">Accreditation</div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+              <div className="text-lg font-bold text-purple-600">{(school.accreditation || []).join(", ") || "N/A"}</div>
+              <div className="text-gray-500 text-sm font-medium">Accreditation</div>
             </div>
-            <div className="bg-gray-800 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-purple-500">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+              <div className="text-2xl md:text-3xl font-bold text-orange-600">
                 {school.externship_included ? (school.externship_hours ? `${school.externship_hours} hrs` : "Yes") : "No"}
               </div>
-              <div className="text-gray-400 text-sm">Externship</div>
+              <div className="text-gray-500 text-sm font-medium">Externship</div>
             </div>
           </div>
 
-          <div className="flex gap-4 mb-12">
+          <div className="flex flex-col md:flex-row gap-4 mb-16">
             {school.website && (
               <a href={school.website} target="_blank" rel="noopener noreferrer"
-                className="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition">
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-8 rounded-full text-center text-lg transition-all hover:shadow-lg">
                 Visit School Website
               </a>
             )}
             <Link href="/#lead-form"
-              className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+              className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-5 px-8 rounded-full text-lg transition-all hover:shadow-lg">
               Request Info
             </Link>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h2 className="text-xl font-bold mb-4">Program Details</h2>
-              <dl className="space-y-3">
-                <div className="flex justify-between"><dt className="text-gray-400">Program Type</dt><dd className="font-bold capitalize">{school.program_type}</dd></div>
-                <div className="flex justify-between"><dt className="text-gray-400">Duration</dt><dd className="font-bold">{school.program_length_display}</dd></div>
-                <div className="flex justify-between"><dt className="text-gray-400">Tuition Range</dt><dd className="font-bold text-green-500">${school.tuition_low.toLocaleString()} - ${school.tuition_high.toLocaleString()}</dd></div>
-                <div className="flex justify-between"><dt className="text-gray-400">Financial Aid</dt><dd className="font-bold">{school.financial_aid ? "Available" : "Not Available"}</dd></div>
-                <div className="flex justify-between"><dt className="text-gray-400">Externship</dt><dd className="font-bold">{school.externship_included ? (school.externship_hours ? `${school.externship_hours} hours` : "Included") : "Not Included"}</dd></div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold mb-6 text-black">Program Details</h2>
+              <dl className="space-y-4">
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Program Type</dt><dd className="font-bold capitalize text-black">{school.program_type}</dd></div>
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Duration</dt><dd className="font-bold text-black">{school.program_length_display}</dd></div>
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Tuition Range</dt><dd className="font-bold text-green-600">${school.tuition_low.toLocaleString()} - ${school.tuition_high.toLocaleString()}</dd></div>
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Financial Aid</dt><dd className="font-bold text-black">{school.financial_aid ? "Available" : "Not Available"}</dd></div>
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Externship</dt><dd className="font-bold text-black">{school.externship_included ? (school.externship_hours ? `${school.externship_hours} hours` : "Included") : "Not Included"}</dd></div>
               </dl>
             </div>
 
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h2 className="text-xl font-bold mb-4">Certifications</h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <h2 className="text-2xl font-bold mb-6 text-black">Certifications</h2>
               <div className="mb-6">
-                <h3 className="text-gray-400 text-sm mb-2">Accreditation</h3>
+                <h3 className="text-gray-600 font-medium text-sm mb-3">Accreditation</h3>
                 <div className="flex flex-wrap gap-2">
                   {(school.accreditation || []).length > 0 ? school.accreditation.map(acc => (
-                    <span key={acc} className="bg-green-900/50 text-green-400 px-3 py-1 rounded-full text-sm">{acc}</span>
+                    <span key={acc} className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">{acc}</span>
                   )) : <span className="text-gray-500">Not specified</span>}
                 </div>
               </div>
               <div>
-                <h3 className="text-gray-400 text-sm mb-2">Prepares For</h3>
+                <h3 className="text-gray-600 font-medium text-sm mb-3">Prepares For</h3>
                 <div className="flex flex-wrap gap-2">
                   {(school.certifications_prepared || []).map(cert => (
-                    <span key={cert} className="bg-blue-900/50 text-blue-400 px-3 py-1 rounded-full text-sm">{cert}</span>
+                    <span key={cert} className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">{cert}</span>
                   ))}
                 </div>
               </div>
@@ -148,12 +148,13 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           </div>
 
           {school.highlights && school.highlights.length > 0 && (
-            <div className="mt-8 bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-              <h2 className="text-xl font-bold mb-4">Program Highlights</h2>
-              <ul className="grid md:grid-cols-2 gap-3">
+            <div className="mt-8 bg-blue-50 border border-blue-100 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-black">Program Highlights</h2>
+              <ul className="grid md:grid-cols-2 gap-4">
                 {school.highlights.map((h, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-green-500">&#10003;</span> {h}
+                  <li key={i} className="flex items-center gap-3 text-gray-700">
+                    <span className="text-blue-600 text-lg font-bold">✓</span> 
+                    <span className="font-medium">{h}</span>
                   </li>
                 ))}
               </ul>
@@ -162,8 +163,24 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
         </div>
       </section>
 
-      <footer className="py-10 px-6 bg-gray-900 text-center text-gray-500">
-        <p>&copy; 2026 Phlebotomy Schools Directory</p>
+      <footer className="py-16 px-6 bg-gray-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <Link href="/" className="text-3xl font-bold text-white">PhlebGuide</Link>
+            <p className="mt-4 text-gray-300 text-lg">
+              Your trusted guide to finding accredited phlebotomy training programs
+            </p>
+          </div>
+          <div className="flex justify-center gap-8 mb-8">
+            <Link href="/about" className="text-gray-300 hover:text-white font-medium transition-colors">About</Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white font-medium transition-colors">Blog</Link>
+            <Link href="/contact" className="text-gray-300 hover:text-white font-medium transition-colors">Contact</Link>
+            <Link href="/privacy" className="text-gray-300 hover:text-white font-medium transition-colors">Privacy</Link>
+          </div>
+          <div className="text-center text-gray-400 text-sm border-t border-gray-700 pt-8">
+            <p>&copy; 2026 PhlebGuide. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </main>
   );
