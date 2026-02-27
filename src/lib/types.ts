@@ -19,6 +19,7 @@ export interface School {
   highlights: string[];
   national: boolean;
   description: string | null;
+  logo_url: string | null;
   vote_count: number;
   rating: number;
 }
