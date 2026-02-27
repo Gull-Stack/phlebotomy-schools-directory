@@ -91,8 +91,12 @@ export default async function Home() {
                 </div>
                 <div className="flex justify-between text-sm mb-4">
                   <span className="text-green-600 font-bold">
-                    ${school.tuition_low.toLocaleString()}
-                    {school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
+                    {school.tuition_low ? (
+                      <>
+                        ${school.tuition_low.toLocaleString()}
+                        {school.tuition_high && school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
+                      </>
+                    ) : "Contact School"}
                   </span>
                   <span className="text-gray-500 font-medium">
                     {school.program_length_display}

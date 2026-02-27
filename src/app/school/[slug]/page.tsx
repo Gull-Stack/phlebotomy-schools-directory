@@ -22,13 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ? `. ${school.accreditation.join(", ")} accredited` 
     : "";
   
+  const tuitionText = school.tuition_low 
+    ? `Tuition: $${school.tuition_low.toLocaleString()}${school.tuition_high && school.tuition_high > school.tuition_low ? `-$${school.tuition_high.toLocaleString()}` : ''}. ` 
+    : '';
+  const durationText = school.program_length_display ? `Duration: ${school.program_length_display}` : '';
+  const locationText = [school.city, school.state].filter(Boolean).join(', ');
+  const desc = `${school.name} phlebotomy training program${locationText ? ` in ${locationText}` : ''}. ${tuitionText}${durationText}${accreditationText}.`.replace(/\.\./g, '.');
+  
   return {
     title: `${school.name} - Phlebotomy Training | PhlebGuide`,
-    description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low.toLocaleString()}-$${school.tuition_high.toLocaleString()}. Duration: ${school.program_length_display}${accreditationText}.`,
-    keywords: [`${school.name} phlebotomy`, `phlebotomy training ${school.city}`, `${school.state} phlebotomy schools`, `phlebotomist certification ${school.city}`],
+    description: desc,
+    keywords: [`${school.name} phlebotomy`, `phlebotomy training ${school.city || ''}`, `${school.state || ''} phlebotomy schools`, `phlebotomist certification ${school.city || ''}`].filter(k => k.trim()),
     openGraph: {
       title: `${school.name} - Phlebotomy Training | PhlebGuide`,
-      description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low.toLocaleString()}-$${school.tuition_high.toLocaleString()}. Duration: ${school.program_length_display}${accreditationText}.`,
+      description: desc,
       url: `https://phlebguide.com/school/${slug}`,
     },
     alternates: {
@@ -122,10 +129,14 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
               <div className="text-2xl md:text-3xl font-bold text-green-600">
-                ${school.tuition_low.toLocaleString()}
-                {school.tuition_high > school.tuition_low && (
-                  <span className="text-lg"> - ${school.tuition_high.toLocaleString()}</span>
-                )}
+                {school.tuition_low ? (
+                  <>
+                    ${school.tuition_low.toLocaleString()}
+                    {school.tuition_high && school.tuition_high > school.tuition_low && (
+                      <span className="text-lg"> - ${school.tuition_high.toLocaleString()}</span>
+                    )}
+                  </>
+                ) : "Contact School"}
               </div>
               <div className="text-gray-500 text-sm font-medium">Tuition</div>
             </div>
@@ -164,7 +175,7 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
               <dl className="space-y-4">
                 <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Program Type</dt><dd className="font-bold capitalize text-black">{school.program_type}</dd></div>
                 <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Duration</dt><dd className="font-bold text-black">{school.program_length_display}</dd></div>
-                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Tuition Range</dt><dd className="font-bold text-green-600">${school.tuition_low.toLocaleString()} - ${school.tuition_high.toLocaleString()}</dd></div>
+                <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Tuition Range</dt><dd className="font-bold text-green-600">{school.tuition_low ? `$${school.tuition_low.toLocaleString()}${school.tuition_high ? ` - $${school.tuition_high.toLocaleString()}` : ''}` : 'Contact School'}</dd></div>
                 <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Financial Aid</dt><dd className="font-bold text-black">{school.financial_aid ? "Available" : "Not Available"}</dd></div>
                 <div className="flex justify-between items-center"><dt className="text-gray-600 font-medium">Externship</dt><dd className="font-bold text-black">{school.externship_included ? (school.externship_hours ? `${school.externship_hours} hours` : "Included") : "Not Included"}</dd></div>
               </dl>
