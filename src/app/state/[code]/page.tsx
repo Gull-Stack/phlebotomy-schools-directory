@@ -102,16 +102,25 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
                 <Link key={school.slug} href={`/school/${school.slug}`}
                   className="bg-white border border-gray-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-black">{school.name}</h3>
-                    <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">{school.program_type}</span>
+                    <div className="flex items-center gap-3">
+                      {school.logo_url && (
+                        <img src={school.logo_url} alt={`${school.name} logo`} className="w-10 h-10 object-contain rounded-lg bg-gray-50 p-1 border border-gray-100 flex-shrink-0" loading="lazy" />
+                      )}
+                      <h3 className="text-xl font-bold text-black">{school.name}</h3>
+                    </div>
+                    <span className="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium flex-shrink-0">{school.program_type}</span>
                   </div>
                   <p className="text-gray-600 mb-6 font-medium">{school.city}, {school.state}</p>
                   <div className="grid grid-cols-2 gap-4 text-sm mb-6">
                     <div>
                       <span className="text-gray-500 font-medium">Tuition:</span>
                       <div className="text-green-600 font-bold">
-                        ${school.tuition_low.toLocaleString()}
-                        {school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
+                        {school.tuition_low ? (
+                          <>
+                            ${school.tuition_low.toLocaleString()}
+                            {school.tuition_high && school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
+                          </>
+                        ) : "Contact School"}
                       </div>
                     </div>
                     <div>
@@ -141,10 +150,15 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
             {nationalSchools.map(school => (
               <Link key={school.slug} href={`/school/${school.slug}`}
                 className="bg-white border border-gray-100 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all">
-                <h3 className="text-lg font-bold mb-3 text-black">{school.name}</h3>
+                <div className="flex items-center gap-3 mb-3">
+                  {school.logo_url && (
+                    <img src={school.logo_url} alt={`${school.name} logo`} className="w-8 h-8 object-contain rounded-lg bg-gray-50 p-1 border border-gray-100 flex-shrink-0" loading="lazy" />
+                  )}
+                  <h3 className="text-lg font-bold text-black">{school.name}</h3>
+                </div>
                 <div className="text-gray-500 text-sm mb-4 font-medium">{school.program_type}</div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-green-600 font-bold">${school.tuition_low.toLocaleString()}</span>
+                  <span className="text-green-600 font-bold">{school.tuition_low ? `$${school.tuition_low.toLocaleString()}` : 'Contact School'}</span>
                   <span className="text-gray-500 font-medium">{school.program_length_display}</span>
                 </div>
               </Link>

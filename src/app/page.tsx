@@ -83,9 +83,19 @@ export default async function Home() {
                 href={`/school/${school.slug}`}
                 className="bg-white border border-gray-100 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all group"
               >
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
-                  {school.name}
-                </h3>
+                <div className="flex items-center gap-4 mb-3">
+                  {school.logo_url && (
+                    <img 
+                      src={school.logo_url} 
+                      alt={`${school.name} logo`}
+                      className="w-10 h-10 object-contain rounded-lg bg-gray-50 p-1 border border-gray-100 flex-shrink-0"
+                      loading="lazy"
+                    />
+                  )}
+                  <h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors">
+                    {school.name}
+                  </h3>
+                </div>
                 <div className="text-gray-500 text-sm mb-6 font-medium">
                   {school.program_type === 'online' ? '100% Online' : 'Hybrid'}
                 </div>

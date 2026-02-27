@@ -113,11 +113,21 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
             }}
           />
           <div className="flex items-start justify-between mb-8">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{school.name}</h1>
-              <p className="text-xl md:text-2xl text-gray-600">{school.city}, {school.state}</p>
+            <div className="flex items-center gap-6">
+              {school.logo_url && (
+                <img 
+                  src={school.logo_url} 
+                  alt={`${school.name} logo`}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl bg-gray-50 p-2 border border-gray-100 flex-shrink-0"
+                  loading="lazy"
+                />
+              )}
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{school.name}</h1>
+                <p className="text-xl md:text-2xl text-gray-600">{school.city}, {school.state}</p>
+              </div>
             </div>
-            <span className={`px-6 py-3 rounded-full text-sm font-bold ${
+            <span className={`px-6 py-3 rounded-full text-sm font-bold flex-shrink-0 ${
               school.program_type === 'online' ? 'bg-blue-100 text-blue-700' :
               school.program_type === 'hybrid' ? 'bg-purple-100 text-purple-700' : 'bg-green-100 text-green-700'
             }`}>
@@ -155,6 +165,13 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
               <div className="text-gray-500 text-sm font-medium">Externship</div>
             </div>
           </div>
+
+          {school.description && (
+            <div className="mb-12 bg-gray-50 border border-gray-100 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-4 text-black">About {school.name}</h2>
+              <p className="text-gray-700 text-lg leading-relaxed">{school.description}</p>
+            </div>
+          )}
 
           <div className="flex flex-col md:flex-row gap-4 mb-16">
             {school.website && (
