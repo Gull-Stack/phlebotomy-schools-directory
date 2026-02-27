@@ -146,6 +146,49 @@ export default async function Home() {
           <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
             Start your healthcare career with these compelling advantages
           </p>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does phlebotomy training take?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Most phlebotomy programs take just 4-12 weeks. You could be working in healthcare within 2 months of starting your training."
+                    }
+                  },
+                  {
+                    "@type": "Question", 
+                    "name": "Do I need a college degree to become a phlebotomist?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "No college degree is required. A high school diploma or GED is all you need to start phlebotomy training. No college debt necessary."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Is there high demand for phlebotomists?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, 22% job growth is expected for phlebotomists. Hospitals, labs, and clinics are always hiring qualified phlebotomists."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How much do phlebotomists earn?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The average phlebotomist salary is $37,380/year with full benefits. Top earners make $52,000 or more annually."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">

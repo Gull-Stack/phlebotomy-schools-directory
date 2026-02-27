@@ -15,9 +15,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { data } = await supabaseAdmin.from("blog_posts").select("*").eq("slug", slug).eq("status", "published").single();
   const post = data as BlogPost | null;
   if (!post) return { title: "Post Not Found" };
+  
   return {
-    title: post.seo_title || `${post.title} | Phlebotomy Blog`,
-    description: post.seo_description || post.excerpt || `Read ${post.title} on the Phlebotomy Schools blog.`,
+    title: post.seo_title || `${post.title} | PhlebGuide Blog`,
+    description: post.seo_description || post.excerpt || `Read ${post.title} on the PhlebGuide blog for phlebotomy career tips and training advice.`,
+    keywords: post.tags || ["phlebotomy", "healthcare careers", "medical training"],
+    openGraph: {
+      title: post.seo_title || `${post.title} | PhlebGuide Blog`,
+      description: post.seo_description || post.excerpt || `Read ${post.title} on the PhlebGuide blog for phlebotomy career tips and training advice.`,
+      url: `https://phlebguide.com/blog/${slug}`,
+      type: "article",
+      ...(post.cover_image && { images: [{ url: post.cover_image }] }),
+    },
+    alternates: {
+      canonical: `https://phlebguide.com/blog/${slug}`,
+    },
   };
 }
 

@@ -5,8 +5,17 @@ import { BlogPost } from "@/lib/types";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Phlebotomy Blog | Career Tips, Guides & Industry News",
+  title: "Phlebotomy Blog - Career Tips & Training Guides | PhlebGuide",
   description: "Expert advice on phlebotomy training, certification, career tips, and industry news. Start your healthcare career with confidence.",
+  keywords: ["phlebotomy career tips", "phlebotomy training guides", "healthcare careers", "medical training advice", "phlebotomist certification"],
+  openGraph: {
+    title: "Phlebotomy Blog - Career Tips & Training Guides | PhlebGuide",
+    description: "Expert advice on phlebotomy training, certification, career tips, and industry news. Start your healthcare career with confidence.",
+    url: "https://phlebguide.com/blog",
+  },
+  alternates: {
+    canonical: "https://phlebguide.com/blog",
+  },
 };
 
 async function getPosts() {

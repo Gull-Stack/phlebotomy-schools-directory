@@ -18,9 +18,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!school) return { title: "School Not Found" };
   
+  const accreditationText = (school.accreditation && school.accreditation.length > 0) 
+    ? `. ${school.accreditation.join(", ")} accredited` 
+    : "";
+  
   return {
-    title: `${school.name} Phlebotomy Program | Tuition, Reviews & Info`,
-    description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low}-$${school.tuition_high}. ${school.program_length_display}. ${(school.accreditation || []).join(", ")} accredited.`
+    title: `${school.name} - Phlebotomy Training | PhlebGuide`,
+    description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low.toLocaleString()}-$${school.tuition_high.toLocaleString()}. Duration: ${school.program_length_display}${accreditationText}.`,
+    keywords: [`${school.name} phlebotomy`, `phlebotomy training ${school.city}`, `${school.state} phlebotomy schools`, `phlebotomist certification ${school.city}`],
+    openGraph: {
+      title: `${school.name} - Phlebotomy Training | PhlebGuide`,
+      description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low.toLocaleString()}-$${school.tuition_high.toLocaleString()}. Duration: ${school.program_length_display}${accreditationText}.`,
+      url: `https://phlebguide.com/school/${slug}`,
+    },
+    alternates: {
+      canonical: `https://phlebguide.com/school/${slug}`,
+    },
   };
 }
 
@@ -61,6 +74,37 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
 
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "PhlebGuide",
+                    "item": "https://phlebguide.com"
+                  },
+                  ...(school.national ? [] : [
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": `Phlebotomy Schools in ${stateNames[school.state_code] || school.state}`,
+                      "item": `https://phlebguide.com/state/${school.state_code.toLowerCase()}`
+                    }
+                  ]),
+                  {
+                    "@type": "ListItem",
+                    "position": school.national ? 2 : 3,
+                    "name": school.name,
+                    "item": `https://phlebguide.com/school/${slug}`
+                  }
+                ]
+              })
+            }}
+          />
           <div className="flex items-start justify-between mb-8">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{school.name}</h1>

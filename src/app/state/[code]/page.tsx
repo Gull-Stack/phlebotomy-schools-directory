@@ -17,9 +17,19 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
   const stateCode = code.toUpperCase();
   const stateName = stateNames[stateCode];
   if (!stateName) return { title: "State Not Found" };
+  
   return {
-    title: `Phlebotomy Schools in ${stateName} | ${stateCode} Phlebotomy Training Programs`,
-    description: `Find accredited phlebotomy training programs in ${stateName}. Compare tuition, program length, and certification options for phlebotomy schools near you.`
+    title: `Phlebotomy Schools in ${stateName} | PhlebGuide`,
+    description: `Find accredited phlebotomy training programs in ${stateName}. Compare tuition, program length, certification options, and start your healthcare career with local schools.`,
+    keywords: [`phlebotomy schools ${stateName}`, `phlebotomy training ${stateName}`, `${stateCode} phlebotomist certification`, `medical training ${stateName}`],
+    openGraph: {
+      title: `Phlebotomy Schools in ${stateName} | PhlebGuide`,
+      description: `Find accredited phlebotomy training programs in ${stateName}. Compare tuition, program length, certification options, and start your healthcare career with local schools.`,
+      url: `https://phlebguide.com/state/${code.toLowerCase()}`,
+    },
+    alternates: {
+      canonical: `https://phlebguide.com/state/${code.toLowerCase()}`,
+    },
   };
 }
 
@@ -49,6 +59,29 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
 
       <section className="py-20 px-6 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "PhlebGuide",
+                    "item": "https://phlebguide.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": `Phlebotomy Schools in ${stateName}`,
+                    "item": `https://phlebguide.com/state/${code.toLowerCase()}`
+                  }
+                ]
+              })
+            }}
+          />
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Phlebotomy Schools in <span className="text-blue-600">{stateName}</span>
           </h1>
