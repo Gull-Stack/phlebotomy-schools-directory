@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const newsreader = Newsreader({
   subsets: ["latin"],
+  variable: "--font-newsreader",
+  display: "swap",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "PhlebGuide - Find Accredited Phlebotomy Schools Near You",
-  description: "Find and compare accredited phlebotomy training programs. Get matched with schools in your area. Start your healthcare career in as little as 8 weeks.",
+  title: "PhlebGuide - Clinical Excellence in Phlebotomy Education",
+  description: "Discover the nation's premier phlebotomy certification programs. We connect aspiring professionals with accredited clinical training centers that define modern healthcare standards.",
 };
 
 export default function RootLayout({
@@ -23,9 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${newsreader.variable} antialiased bg-gray-50 font-inter selection:bg-blue-100`}
       >
         {children}
       </body>
