@@ -139,7 +139,7 @@ export default async function Home() {
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="font-serif text-2xl font-semibold text-slate-900">{school.name}</h3>
                     <span className="text-slate-500 font-medium text-sm">
-                      ${school.tuition_low.toLocaleString()} Est.
+                      {school.tuition_low ? `$${school.tuition_low.toLocaleString()} Est.` : 'Contact School'}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-500 text-sm mb-6">

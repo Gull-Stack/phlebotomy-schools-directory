@@ -78,10 +78,14 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
               <div className="text-2xl md:text-3xl font-bold text-green-600">
-                ${school.tuition_low.toLocaleString()}
-                {school.tuition_high > school.tuition_low && (
-                  <span className="text-lg"> - ${school.tuition_high.toLocaleString()}</span>
-                )}
+                {school.tuition_low ? (
+                  <>
+                    ${school.tuition_low.toLocaleString()}
+                    {school.tuition_high && school.tuition_high > school.tuition_low && (
+                      <span className="text-lg"> - ${school.tuition_high.toLocaleString()}</span>
+                    )}
+                  </>
+                ) : 'Contact School'}
               </div>
               <div className="text-gray-500 text-sm font-medium">Tuition</div>
             </div>
