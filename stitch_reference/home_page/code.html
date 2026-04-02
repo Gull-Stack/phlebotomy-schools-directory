@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PhlebGuide | Clinical Excellence in Phlebotomy Training</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#bec6e0",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#eeefff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "surface-dim": "#d1dbec",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#121c28",
+                        "surface-variant": "#d9e3f4",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#2563eb",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#27313e",
+                        "tertiary-container": "#007b71",
+                        "tertiary": "#006058",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-high": "#dfe9fa",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-highest": "#d9e3f4",
+                        "primary": "#004ac6",
+                        "surface-tint": "#0053db",
+                        "secondary-container": "#dae2fd",
+                        "on-tertiary-container": "#b3fff3",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eef4ff",
+                        "outline": "#737686",
+                        "on-surface": "#121c28",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed": "#00174b",
+                        "secondary": "#565e74",
+                        "secondary-fixed": "#dae2fd",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#89f5e7"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 text-3xl" data-icon="medical_services">medical_services</span>
+<span class="text-2xl font-black text-blue-800 tracking-tighter font-headline">PhlebGuide</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 font-bold border-b-2 border-blue-600 font-label py-1" href="#">Find Programs</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors font-label py-1" href="#">State Directory</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors font-label py-1" href="#">Career Blog</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors font-label py-1" href="#">Accreditation Guide</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-xl font-label text-sm font-bold tracking-wide editorial-gradient shadow-lg shadow-primary/20 hover:opacity-90 transition-all active:scale-95">
+                FIND PROGRAMS
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[751px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 py-20">
+<div class="lg:col-span-7">
+<span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label text-xs font-bold mb-6 tracking-wider">CAREER PATHWAY 2024</span>
+<h1 class="text-5xl lg:text-7xl font-black font-headline text-on-surface leading-[1.05] tracking-tighter mb-8">
+                        Your career in <span class="text-primary">phlebotomy</span> starts here.
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Access the nation's most comprehensive directory of accredited phlebotomy programs. Start your journey toward clinical excellence today.
+                    </p>
+<div class="bg-surface-container-lowest p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 max-w-2xl border border-outline-variant/20">
+<div class="flex-1 flex items-center px-4 gap-3 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-label py-4" placeholder="Find phlebotomy schools near you..." type="text"/>
+</div>
+<button class="editorial-gradient text-on-primary px-8 py-4 rounded-xl font-label font-bold text-sm tracking-widest whitespace-nowrap">
+                            SEARCH NOW
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl transform lg:rotate-2">
+<img alt="medical training" class="w-full h-full object-cover" data-alt="close-up of a healthcare professional in blue scrubs carefully drawing blood in a clean modern clinical setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwXfHOmmKDdtiBDeORL7gQKsevF1pexwHL4LmPokHJJFS4EPdPGxKBsM2aj3VmRi0J9rmoxNghC4zDIDvRRPc7DfNesXxcmqP5ffbOwVbaiOJx0h4jw5c8qOngUqUXBmFIfZTfIkUJtrjXEqb7VxmCBu94zsrvBuOv5ugHn6OVdzVRAnqOA6LKwXUkSMmodiSjqMpQBJRMU2huR2ljAPcK2OroWl6nWWfOHHQYwhWvQ5pJaxk6CrL7OszFKDVNWeUTMnUIRsQKKAlc"/>
+</div>
+<!-- Decorative Floating Card -->
+<div class="absolute -bottom-6 -left-12 bg-surface-container-lowest p-6 rounded-2xl shadow-xl border border-outline-variant/10 hidden xl:block">
+<div class="flex items-center gap-4">
+<div class="bg-tertiary-container/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-sm font-black font-headline text-on-surface">500+ Schools</p>
+<p class="text-xs text-on-surface-variant font-label">Accredited &amp; Verified</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Shape -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-low -z-10 rounded-l-[10rem] hidden lg:block"></div>
+</section>
+<!-- Featured Programs -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="text-4xl font-black font-headline tracking-tighter text-on-surface mb-4">Featured Programs</h2>
+<p class="text-on-surface-variant font-label max-w-lg">Elite institutions recognized for superior clinical training and high certification pass rates.</p>
+</div>
+<a class="text-primary font-bold font-label flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                        View all programs <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- School Card 1 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-8 transition-all hover:shadow-xl group">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-lg bg-tertiary-container text-on-tertiary-container text-[10px] font-bold font-label tracking-widest">CAAHEP ACCREDITED</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="bookmark">bookmark</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-2 text-on-surface">Mayo Clinic College</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> Rochester, MN
+                        </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<div class="flex justify-between items-center text-sm font-label">
+<span class="text-on-surface-variant">Est. Tuition</span>
+<span class="text-on-surface font-bold text-lg">$2,800</span>
+</div>
+</div>
+<button class="w-full border-2 border-primary-container text-primary font-bold py-3 rounded-xl font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                            VIEW DETAILS
+                        </button>
+</div>
+<!-- School Card 2 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-8 transition-all hover:shadow-xl group">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-lg bg-tertiary-container text-on-tertiary-container text-[10px] font-bold font-label tracking-widest">NAACLS VERIFIED</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="bookmark">bookmark</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-2 text-on-surface">UCLA Medical Center</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> Los Angeles, CA
+                        </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<div class="flex justify-between items-center text-sm font-label">
+<span class="text-on-surface-variant">Est. Tuition</span>
+<span class="text-on-surface font-bold text-lg">$3,150</span>
+</div>
+</div>
+<button class="w-full border-2 border-primary-container text-primary font-bold py-3 rounded-xl font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                            VIEW DETAILS
+                        </button>
+</div>
+<!-- School Card 3 -->
+<div class="bg-surface-container-lowest rounded-[1.5rem] p-8 transition-all hover:shadow-xl group">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-lg bg-tertiary-container text-on-tertiary-container text-[10px] font-bold font-label tracking-widest">ASCP PREP FOCUS</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors" data-icon="bookmark">bookmark</span>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-2 text-on-surface">Johns Hopkins Training</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span> Baltimore, MD
+                        </p>
+<div class="bg-surface-container-low rounded-xl p-4 mb-8">
+<div class="flex justify-between items-center text-sm font-label">
+<span class="text-on-surface-variant">Est. Tuition</span>
+<span class="text-on-surface font-bold text-lg">$2,400</span>
+</div>
+</div>
+<button class="w-full border-2 border-primary-container text-primary font-bold py-3 rounded-xl font-label text-sm hover:bg-primary-container hover:text-on-primary-container transition-all">
+                            VIEW DETAILS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Phlebotomy? -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl lg:text-5xl font-black font-headline tracking-tighter text-on-surface mb-6">Why Phlebotomy?</h2>
+<p class="text-on-surface-variant font-label max-w-2xl mx-auto text-lg">A vital role in the medical ecosystem with rapid growth and accessible entry requirements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="bg-surface p-10 rounded-[2rem] text-center border border-outline-variant/10">
+<div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="trending_up">trending_up</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-4">High Demand</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-label">Employment projected to grow 8% through 2032, faster than average.</p>
+</div>
+<div class="bg-surface p-10 rounded-[2rem] text-center border border-outline-variant/10">
+<div class="w-16 h-16 bg-tertiary-container/10 text-tertiary-container rounded-2xl flex items-center justify-center mx-auto mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="timer">timer</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-4">Fast Training</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-label">Complete your certification and clinicals in as little as 4-8 weeks.</p>
+</div>
+<div class="bg-surface p-10 rounded-[2rem] text-center border border-outline-variant/10">
+<div class="w-16 h-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="payments">payments</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-4">Solid Earnings</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-label">Competitive starting salaries with significant overtime potential.</p>
+</div>
+<div class="bg-surface p-10 rounded-[2rem] text-center border border-outline-variant/10">
+<div class="w-16 h-16 bg-tertiary-container/10 text-tertiary-container rounded-2xl flex items-center justify-center mx-auto mb-8">
+<span class="material-symbols-outlined text-4xl" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<h4 class="text-xl font-bold font-headline mb-4">Vital Impact</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-label">Be the critical first step in medical diagnosis and patient care.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="bg-primary p-12 rounded-[3rem] editorial-gradient aspect-square flex flex-col justify-end text-on-primary shadow-2xl">
+<h3 class="text-4xl font-black font-headline mb-4 leading-tight">Start your clinical journey today.</h3>
+<p class="text-on-primary-container text-lg font-label opacity-90">We've mapped every accredited program across the country to simplify your path.</p>
+</div>
+<!-- Decorative overlay image -->
+<div class="absolute -top-12 -right-12 w-64 h-64 rounded-3xl overflow-hidden border-[12px] border-surface shadow-2xl hidden md:block">
+<img alt="laboratory research" class="w-full h-full object-cover" data-alt="professional laboratory technician analyzing samples in a high-tech medical lab with clean steel surfaces and bright lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX5C4HB8qATHIeWaA2kuuthnd7JvcvnViPVvREe_qF8KHs0PGXpblJR9pV-HOt_o5SpRI5L68QX2gG8D6Rzb61821tDViRwM1aMVAu3xMtNMj7aNiG8YmYvZhflNUrNHt6s8Sd346ILSY6O9uBN74inh1AcSNYEGpcVVt_Ilt40rfnJZOAiQts_V-Glah2cBXW-JanDIMhJUZBVkuzjofCJ8mLq-KqZlr8ZxWhlymvxkO5ieSaytfriHgYxk04Dpy3yxHA71VG3c6z"/>
+</div>
+</div>
+<div class="space-y-12">
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary font-black font-headline text-2xl group-hover:scale-110 transition-transform">1</div>
+<div>
+<h4 class="text-2xl font-bold font-headline mb-2">Search</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Enter your zip code to find accredited programs in your immediate area or preferred state.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary font-black font-headline text-2xl group-hover:scale-110 transition-transform">2</div>
+<div>
+<h4 class="text-2xl font-bold font-headline mb-2">Compare</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Analyze tuition costs, program duration, accreditation types, and historical pass rates side-by-side.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary font-black font-headline text-2xl group-hover:scale-110 transition-transform">3</div>
+<div>
+<h4 class="text-2xl font-bold font-headline mb-2">Apply</h4>
+<p class="text-on-surface-variant font-label leading-relaxed">Direct links to official school application portals to streamline your enrollment process.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest from the Blog -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-center mb-16">
+<h2 class="text-4xl font-black font-headline tracking-tighter text-on-surface">Clinical Advice</h2>
+<button class="text-primary font-bold font-label px-6 py-2 rounded-full border-2 border-primary-container hover:bg-primary-container hover:text-on-primary-container transition-all">READ ALL POSTS</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<article class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-video mb-6 relative">
+<img alt="medical student" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="confident young medical student in white coat holding a clipboard in a bright clinic hallway with soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuBjWcPjgy78S4l5lofUe4SEmoKf3kultbih2-1jtbovI0sc3wgvh6m9KrTG4y5WQ94b_jrOJeZaV6EC0czoeITgT9BFOZV9r4mnXWqccF7IuII3RvWgUIun8fodZ5N1eM0CGJRFkO8-YM5C6mw5NsYCh4EvoQwYuioWrQmNYc-jZkEf-u_wVIsGEAkUf4iyo58UpaKBcDjIPRDcSgR0RdNj0ZAx6XpExagp4JWt-5IaFCDNclyjZKfGg0D8RhAQMOPprpAjzWG5YJ"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-bright/90 backdrop-blur-md rounded-lg text-[10px] font-bold font-label tracking-widest text-primary">EXAM PREP</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-3 group-hover:text-primary transition-colors">How to Ace Your ASCP Certification on the First Try</h3>
+<p class="text-on-surface-variant font-label line-clamp-2">The ultimate guide to study materials, practice tests, and common pitfalls for the national exam...</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-video mb-6 relative">
+<img alt="hospital equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="organized sterile medical supplies on a metal tray in a modern hospital setting with dramatic clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4BhplXnJ28RT_JbnQltIllQkuvz1Pa0TjK1MhAQSzl3acEdgPlc3bI0Xu_ZiZuuCUY1rlU4A2l98AgMBVL94QEmPdEarbCBvrOo68UiLCNw8_M2-sP-6HGfjbdiMbIkrDfBRVwCVQj9oWE7_yHJS1RI_c3A3hVkC8yM8Iw_w355a_e3jsR0Tq2VN0PYZDrIORUAMeMt1icuQvVsHr5SKwHwHXibk80RwesRupH4ad2VXGyLbdO3-39a68ZnyQkYMrW9mmtsOH2Ova"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-bright/90 backdrop-blur-md rounded-lg text-[10px] font-bold font-label tracking-widest text-primary">CLINICAL SKILLS</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-3 group-hover:text-primary transition-colors">5 Tips for Dealing with Difficult Veins</h3>
+<p class="text-on-surface-variant font-label line-clamp-2">Master the art of locating deep veins and managing patient anxiety during challenging draws...</p>
+</article>
+<article class="group cursor-pointer">
+<div class="rounded-3xl overflow-hidden aspect-video mb-6 relative">
+<img alt="nurse working" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close-up of a healthcare professional's hands carefully labeling medical test tubes in a laboratory setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK_vSw7yDmUxwE4KOQn8CjB1a852aelOHIgDYHKQbZXHmF_93JDP2iuu_J_rL28t5hrORxLENOdcmRyVjmd34tx-jtzwYnhPtSZJ_8T7bzUUdDmv_8Tj_hTXf3g859tFKEvtSjMzMlAyeU3CzBW-syNOZH9mB-bIrePGEgtJWG-5MBHoUQhFe-wIMx8hpI55rkWRmQnHyAsDgCH00qAWLlBXMuFW2dMV92h4RJiaGvjfPstA-cxP1TEKLg5rSx6cZGnB9PJP14Ml1J"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-surface-bright/90 backdrop-blur-md rounded-lg text-[10px] font-bold font-label tracking-widest text-primary">CAREER TIPS</span>
+</div>
+</div>
+<h3 class="text-2xl font-bold font-headline mb-3 group-hover:text-primary transition-colors">Navigating Your First Phlebotomy Externship</h3>
+<p class="text-on-surface-variant font-label line-clamp-2">What to expect from your clinical rotation and how to impress your supervisors for a job offer...</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-blue-700 text-2xl" data-icon="medical_services">medical_services</span>
+<span class="text-xl font-bold text-slate-900 font-headline tracking-tighter">PhlebGuide</span>
+</div>
+<p class="text-slate-500 font-label text-sm leading-relaxed mb-6">Clinical Excellence in Phlebotomy Training. We help students find the best educational paths to medical success.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="public">public</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 font-headline uppercase text-xs tracking-[0.2em]">Explore</h5>
+<ul class="space-y-4 font-label text-sm">
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Find Programs</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">State Directory</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Certification Map</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 font-headline uppercase text-xs tracking-[0.2em]">Resources</h5>
+<ul class="space-y-4 font-label text-sm">
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Career Blog</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Accreditation Guide</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">FAQ Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6 font-headline uppercase text-xs tracking-[0.2em]">Legal</h5>
+<ul class="space-y-4 font-label text-sm">
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Terms of Use</a></li>
+<li><a class="text-slate-500 hover:underline hover:text-blue-700 transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+<p class="text-slate-500 font-label text-xs text-center">© 2024 PhlebGuide. Clinical Excellence in Phlebotomy Training.</p>
+</div>
+</footer>
+</body></html>

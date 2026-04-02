@@ -32,21 +32,24 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center shadow-sm">
-        <p className="text-xl font-bold text-green-800 mb-2">You&apos;re in!</p>
-        <p className="text-green-700">We&apos;ll connect you with programs in your area.</p>
+      <div className="bg-secondary-fixed/20 border border-secondary/20 rounded-2xl p-8 text-center shadow-sm">
+        <div className="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="material-symbols-outlined text-secondary text-2xl">check_circle</span>
+        </div>
+        <h3 className="text-xl font-bold text-secondary mb-2">You&apos;re in!</h3>
+        <p className="text-on-secondary-fixed-variant">We&apos;ll connect you with programs in your area.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
       <input
         type="text"
         placeholder="Your name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
+        className="bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-lg text-white focus:border-secondary focus:outline-none transition-colors shadow-sm placeholder:text-white/60"
       />
       <input
         type="email"
@@ -54,7 +57,7 @@ export default function LeadForm() {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
+        className="bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-lg text-white focus:border-secondary focus:outline-none transition-colors shadow-sm placeholder:text-white/60"
       />
       <input
         type="text"
@@ -62,17 +65,19 @@ export default function LeadForm() {
         maxLength={2}
         value={stateCode}
         onChange={(e) => setStateCode(e.target.value.toUpperCase())}
-        className="bg-white border-2 border-gray-200 rounded-xl px-6 py-4 text-lg focus:border-blue-500 focus:outline-none transition-colors shadow-sm"
+        className="bg-white/10 border border-white/20 rounded-xl px-6 py-4 text-lg text-white focus:border-secondary focus:outline-none transition-colors shadow-sm placeholder:text-white/60"
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-bold py-4 px-8 rounded-full text-lg transition-all hover:shadow-md"
+        className="cta-gradient disabled:opacity-50 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all hover:shadow-md active:scale-95"
       >
-        {status === "loading" ? "Submitting..." : "Find Schools"}
+        {status === "loading" ? "Connecting..." : "Find Programs"}
       </button>
       {status === "error" && (
-        <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>
+        <div className="bg-error-container/20 border border-error/20 rounded-lg p-4 text-center">
+          <p className="text-error text-sm">Something went wrong. Please try again.</p>
+        </div>
       )}
     </form>
   );

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Plus_Jakarta_Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#bec6e0",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#eeefff",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#6bd8cb",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#5c647a",
+              "surface-dim": "#d1dbec",
+              "surface-bright": "#f8f9ff",
+              "on-background": "#121c28",
+              "surface-variant": "#d9e3f4",
+              "on-primary-fixed-variant": "#003ea8",
+              "surface-container": "#e5eeff",
+              "error": "#ba1a1a",
+              "primary-container": "#2563eb",
+              "primary-fixed": "#dbe1ff",
+              "primary-fixed-dim": "#b4c5ff",
+              "inverse-surface": "#27313e",
+              "tertiary-container": "#007b71",
+              "tertiary": "#006058",
+              "inverse-primary": "#b4c5ff",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-secondary-fixed": "#131b2e",
+              "surface-container-high": "#dfe9fa",
+              "on-surface-variant": "#434655",
+              "on-secondary-fixed-variant": "#3f465c",
+              "outline-variant": "#c3c6d7",
+              "surface-container-highest": "#d9e3f4",
+              "primary": "#004ac6",
+              "surface-tint": "#0053db",
+              "secondary-container": "#dae2fd",
+              "on-tertiary-container": "#b3fff3",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#eef4ff",
+              "outline": "#737686",
+              "on-surface": "#121c28",
+              "background": "#f8f9ff",
+              "on-tertiary-fixed": "#00201d",
+              "on-error-container": "#93000a",
+              "surface": "#f8f9ff",
+              "inverse-on-surface": "#eaf1ff",
+              "on-primary-fixed": "#00174b",
+              "secondary": "#565e74",
+              "secondary-fixed": "#dae2fd",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#89f5e7"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(18, 28, 40, 0.06);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 text-3xl">medical_services</span>
+<span class="text-2xl font-black text-blue-800 tracking-tighter font-headline">PhlebGuide</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors font-label" href="#">State Directory</a>
+<a class="text-slate-600 font-medium hover:text-blue-600 transition-colors font-label" href="#">Career Blog</a>
+<a class="text-blue-700 font-bold border-b-2 border-blue-600 font-label" href="#">Find Programs</a>
+</nav>
+<button class="signature-gradient text-white px-6 py-2.5 rounded-xl font-label text-sm font-bold uppercase tracking-wider editorial-shadow transition-transform active:scale-95">
+                Request Free Info
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Program Header & Hero -->
+<section class="relative pt-12 pb-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7 z-10">
+<nav class="flex items-center gap-2 mb-6 text-sm font-label text-on-surface-variant">
+<span>Programs</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>California</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-semibold">San Francisco Medical Institute</span>
+</nav>
+<h1 class="text-5xl md:text-6xl font-black font-headline text-on-surface leading-[1.1] tracking-tight mb-6">
+                        Clinical Phlebotomy <br/> <span class="text-primary">Certification Program</span>
+</h1>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span class="text-on-surface-variant font-label font-medium">San Francisco, CA</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-tertiary-container/10 rounded-full border border-tertiary-container/20">
+<span class="material-symbols-outlined text-tertiary text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-tertiary font-label font-bold">NAACLS Accredited</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden editorial-shadow rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Clinical training facility" class="w-full h-full object-cover" data-alt="Modern medical laboratory with professional students in blue scrubs practicing blood draw on a training mannequin in bright sterile lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASjUCrFTNN6BEfUggjTmZrCf08U11VeU7t8ZFzEhuFwjj0mURmFusHmq9b2Q55-2RNVp6n8h1LiARTQR4RyBUTPwJlHD8SsC-WboOuKZivfBUXSjumhpK2cCBhbBbmaFC_CA0J6psPIZJcYilYodSUDFYIZONqnEBcd74clmw6cbtlGQcqmETDrxB83uI0b9d_r7uAUY_LhIIlxTWsZTCYA2eEkA0eE4dlsn-9MvciSnptdlU2WsaYntydptGaWTofOV_uCFRI2BYP"/>
+</div>
+<div class="absolute -bottom-6 -left-6 p-6 bg-surface-bright rounded-2xl editorial-shadow max-w-[200px]">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-widest font-bold mb-1">Job Placement</p>
+<p class="text-2xl font-headline font-black text-primary">94%</p>
+<p class="text-[10px] text-on-surface-variant mt-1 leading-tight">Graduates employed within 6 months of completion.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Facts Bento Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-12">
+<h2 class="text-3xl font-black font-headline text-on-surface tracking-tight">At a Glance</h2>
+<p class="text-on-surface-variant mt-2 font-label">Everything you need to know about the enrollment requirements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Fact Card 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col justify-between min-h-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+<div>
+<p class="text-on-surface-variant font-label text-sm font-bold uppercase tracking-wider">Total Tuition</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">$2,450</p>
+<p class="text-xs text-on-surface-variant mt-2">Financial aid available for qualifying students.</p>
+</div>
+</div>
+<!-- Fact Card 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col justify-between min-h-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+<div>
+<p class="text-on-surface-variant font-label text-sm font-bold uppercase tracking-wider">Duration</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">8 Weeks</p>
+<p class="text-xs text-on-surface-variant mt-2">Hybrid: Online lectures + On-campus labs.</p>
+</div>
+</div>
+<!-- Fact Card 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col justify-between min-h-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">event_available</span>
+<div>
+<p class="text-on-surface-variant font-label text-sm font-bold uppercase tracking-wider">Next Start Date</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">Oct 14</p>
+<p class="text-xs text-on-surface-variant mt-2">Enrollment closes Oct 1st, 2024.</p>
+</div>
+</div>
+<!-- Fact Card 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col justify-between min-h-[200px]">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+<div>
+<p class="text-on-surface-variant font-label text-sm font-bold uppercase tracking-wider">Class Size</p>
+<p class="text-3xl font-headline font-black text-on-surface mt-1">12 Seats</p>
+<p class="text-xs text-on-surface-variant mt-2">Small ratios for personalized clinical instruction.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content: Overview & Clinical Sites -->
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16">
+<!-- Left Content Area -->
+<div class="md:col-span-8 space-y-16">
+<div>
+<h2 class="text-4xl font-black font-headline text-on-surface mb-8 tracking-tighter">Program Overview</h2>
+<div class="prose prose-slate max-w-none text-on-surface-variant leading-relaxed space-y-6">
+<p class="text-lg">The Clinical Phlebotomy Technician program at San Francisco Medical Institute is designed to prepare students for national certification and immediate entry into the workforce. Our curriculum bridges the gap between theoretical laboratory science and the delicate art of patient care.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
+<div class="space-y-4">
+<h4 class="text-on-surface font-bold font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">biotech</span>
+                                        Core Curriculum
+                                    </h4>
+<ul class="space-y-3 font-label text-sm">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Anatomy &amp; Physiology of the Circulatory System</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Proper Venipuncture Techniques</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Specimen Collection &amp; Processing</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Safety &amp; Infection Control Protocols</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-surface font-bold font-headline flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                                        Soft Skills Training
+                                    </h4>
+<ul class="space-y-3 font-label text-sm">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Patient Communication &amp; Bedside Manner</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Handling Difficult Draws &amp; Nervous Patients</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check_circle</span> Medical Ethics &amp; HIPAA Compliance</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="p-10 bg-surface-container-low rounded-[2rem] relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-3xl font-black font-headline text-on-surface mb-4 tracking-tight">Clinical Externship Sites</h2>
+<p class="text-on-surface-variant font-label mb-8 max-w-xl">We partner with Northern California's leading healthcare networks to ensure our students gain hands-on experience in high-volume, professional environments.</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-5 py-2.5 bg-white rounded-full text-sm font-bold font-label text-on-surface-variant editorial-shadow">UCSF Medical Center</span>
+<span class="px-5 py-2.5 bg-white rounded-full text-sm font-bold font-label text-on-surface-variant editorial-shadow">Kaiser Permanente</span>
+<span class="px-5 py-2.5 bg-white rounded-full text-sm font-bold font-label text-on-surface-variant editorial-shadow">Sutter Health</span>
+<span class="px-5 py-2.5 bg-white rounded-full text-sm font-bold font-label text-on-surface-variant editorial-shadow">Quest Diagnostics</span>
+</div>
+</div>
+<span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[200px] text-white opacity-40 rotate-12">map</span>
+</div>
+</div>
+<!-- Right Sidebar: Sticky CTA -->
+<div class="md:col-span-4">
+<div class="sticky top-28 p-8 bg-surface-container-lowest border border-outline-variant/20 rounded-3xl editorial-shadow">
+<div class="mb-8">
+<p class="text-primary font-bold font-label text-xs uppercase tracking-[0.2em] mb-2">Take the next step</p>
+<h3 class="text-2xl font-black font-headline text-on-surface leading-tight">Ready to start your career in medicine?</h3>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">download</span>
+<span class="text-sm font-label font-medium">Download Program Brochure</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">contact_support</span>
+<span class="text-sm font-label font-medium">Speak with an Advisor</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<span class="text-sm font-label font-medium">Book a Campus Tour</span>
+</div>
+</div>
+<button class="w-full signature-gradient text-white py-5 rounded-2xl font-headline font-black text-lg shadow-lg hover:shadow-xl transition-all">
+                            Request Free Info
+                        </button>
+<p class="text-center text-[11px] text-on-surface-variant mt-4 font-label">No obligation. 100% free information kit.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Programs -->
+<section class="py-24 bg-surface-bright border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-black font-headline text-on-surface tracking-tight">Similar Programs in California</h2>
+<p class="text-on-surface-variant mt-2 font-label">Explore other highly-rated certification paths nearby.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-bold font-label hover:gap-3 transition-all" href="#">
+                        View all Programs <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- School 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden mb-4 relative">
+<img alt="Related program facility" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Interior of a modern high-tech medical clinic with reception area and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsS3iLsl1-dhjZib6X7MFO7X8y_GFPR3usZCiaxGUrbzMHZ5e0ZskYTEMtuV8RO4VTuimFKYZsQC_v___f8k5GF77gj-HX3rbuv4nmB16PbtaZLHPjam1KmHLFUKi_qcADd2fJPbG7KAqs9J2alV3oIxaDZ2IR_Z4r5l8LqO9ry4xvzMpTjCOCfful8O6tsNAizPTI8iQujcZIoHqw1pAbEaIKQC-1FABprE9RpenAqTSm_oOajW09TCgMxHLFx1AEtjq8vDRX3F8t"/>
+<div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full shadow-sm">
+<span class="text-[10px] font-black font-label text-primary uppercase tracking-wider">Top Rated</span>
+</div>
+</div>
+<h4 class="text-lg font-black font-headline text-on-surface group-hover:text-primary transition-colors">Bay Area Phlebotomy Labs</h4>
+<p class="text-sm text-on-surface-variant font-label mt-1">Oakland, CA • 12 Miles away</p>
+</div>
+<!-- School 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden mb-4 relative">
+<img alt="Related program students" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Healthcare worker in scrubs checking laboratory equipment in a bright research setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMES7puGZxcWnPsvaI-ngcfISUvlWjRlp2rLYhGfJ3E6Hrqbj_Q-QCodJi-6u0c-N3pDCMwBDk-ZtGUcs44dOiQI9tzWY-BMrRI7BPGyQ3S0N7pnSAKfANzo0i9UMuTiI8HsPgR4wEqwsMT-MEtMacHasb0kv0ZRQxm_W49sijgXptLbMaFkeeRCv_ebXmQfFJ6Bs-TLGwqKwD2xqGo6GCzVhx6C6JxRdJYpojfh86lyoZVHRFjPcroYNV7AeGG2np-U43WiNLzz1P"/>
+</div>
+<h4 class="text-lg font-black font-headline text-on-surface group-hover:text-primary transition-colors">Palo Alto Health Careers</h4>
+<p class="text-sm text-on-surface-variant font-label mt-1">Palo Alto, CA • 34 Miles away</p>
+</div>
+<!-- School 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden mb-4 relative">
+<img alt="Medical laboratory equipment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of medical laboratory testing tubes on a steel table with blue technical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJchMFlkhhHrX-8NDz3Xg2rX1aBw3xOSLWFC8tFZ7W9XAHcdKP6oiz5ZJR-nlTl7xuw61jWiXxDfK5nGh4Zxsm4VrmKWGtaZ6cIuLhsxv7QKdf2I4CYLH1QtOonFcmJNFq4zq3Sqh2xM-48po1nh4IBFv9zDCGa8fTK31tWmb1K-E1h2i9YmUnWWIVkLXEUmgwlMHH7sMlvnMUFFpyGvJQGdd3EPBH5qzbebn00nlvvxv_WG_t6YLBOoNlznlRRC4cMcj1sOqOPv4U"/>
+</div>
+<h4 class="text-lg font-black font-headline text-on-surface group-hover:text-primary transition-colors">Golden State Medical Arts</h4>
+<p class="text-sm text-on-surface-variant font-label mt-1">Sacramento, CA • 88 Miles away</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-blue-700 text-2xl">medical_services</span>
+<span class="text-xl font-bold text-slate-900 font-headline">PhlebGuide</span>
+</div>
+<p class="text-slate-500 font-label text-sm leading-relaxed">The authoritative directory for clinical phlebotomy training and certification across the United States.</p>
+</div>
+<div>
+<h5 class="font-headline font-bold text-slate-900 mb-6">Directory</h5>
+<ul class="space-y-4 text-sm font-label text-slate-500">
+<li><a class="hover:underline hover:text-blue-700" href="#">Find Programs</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">State Directory</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">Accreditation Guide</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-slate-900 mb-6">Resources</h5>
+<ul class="space-y-4 text-sm font-label text-slate-500">
+<li><a class="hover:underline hover:text-blue-700" href="#">Career Blog</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">Salary Outlook</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">Exam Prep</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-slate-900 mb-6">Support</h5>
+<ul class="space-y-4 text-sm font-label text-slate-500">
+<li><a class="hover:underline hover:text-blue-700" href="#">Contact Support</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">Privacy Policy</a></li>
+<li><a class="hover:underline hover:text-blue-700" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200">
+<p class="text-slate-400 font-label text-xs text-center">© 2024 PhlebGuide. Clinical Excellence in Phlebotomy Training.</p>
+</div>
+</footer>
+</body></html>

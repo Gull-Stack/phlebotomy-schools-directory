@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PhlebGuide | Clinical Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-container": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-tint": "#565e74",
+                        "surface-container": "#eceef0",
+                        "primary": "#000000",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#dae2fd",
+                        "secondary": "#0058be",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#0b1c30",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-tertiary-container": "#75859d",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dadc",
+                        "inverse-primary": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "outline": "#76777d",
+                        "secondary-container": "#2170e4",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#004395",
+                        "outline-variant": "#c6c6cd",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary": "#000000",
+                        "on-surface": "#191c1e",
+                        "background": "#f7f9fb",
+                        "on-secondary-container": "#fefcff",
+                        "on-error-container": "#93000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-clinical-gradient {
+            background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header bg-slate-50/80 shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<h1 class="font-serif text-xl font-semibold text-slate-900">Phlebotomy Excellence</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24">
+<!-- Hero Section -->
+<section class="px-6 pt-8 pb-12">
+<div class="space-y-4">
+<span class="font-label text-[10px] font-medium uppercase tracking-[0.15em] text-secondary">The Clinical Curator</span>
+<h2 class="font-headline text-5xl leading-[1.1] tracking-tight text-on-surface">
+                    Precision in <br/><span class="italic">Clinical Education.</span>
+</h2>
+<p class="text-on-surface-variant body-lg max-w-[85%] leading-relaxed">
+                    Locate the nation's premier phlebotomy programs with editorial rigor and clinical accuracy.
+                </p>
+</div>
+<!-- Search Interface (The Tool) -->
+<div class="mt-10 p-6 bg-surface-container-lowest rounded-xl shadow-[0_32px_64px_-15px_rgba(0,88,190,0.06)] space-y-4">
+<div class="space-y-1.5">
+<label class="font-label text-[10px] font-semibold uppercase tracking-wider text-outline">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/15 rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none text-sm" placeholder="Enter Zip Code" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label text-[10px] font-semibold uppercase tracking-wider text-outline">Certification Level</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm">verified</span>
+<select class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant/15 rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none text-sm appearance-none">
+<option>Phlebotomy Technician (CPT)</option>
+<option>Limited Phlebotomy (LPT)</option>
+<option>Donor Phlebotomy (DPT)</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-clinical-gradient text-white py-4 rounded-lg font-semibold text-sm shadow-lg shadow-secondary/20 active:scale-[0.98] transition-transform">
+                    Search Schools
+                </button>
+</div>
+</section>
+<!-- Featured Schools (Bento Style) -->
+<section class="bg-surface-container-low py-16 px-6">
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="font-headline text-2xl font-semibold">Premier Schools</h3>
+<span class="font-label text-[10px] text-secondary font-bold uppercase tracking-widest">View All</span>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Large Featured Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern medical laboratory with high-tech equipment, clean white surfaces, and professional blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQzHIzYj65amDy48HBzWDHFGdW8H2rV9gu97dG7LkCDCaddAvLhLqWF9utsWg6ZIwlziAtmpoqy3HU8b6i2pNX1YOj2gdvVWj4TTMPaPI3DV1hvu9dlPYQid8CfwoVFjYL96EXSfUqhDEe62fPJYTplsKEvsPGs4EjPSsERZE8Znsi-OUix-1nyMXMm1ZeqIg06JGrbZJQw1fyEPR_mYF5w3EOQcI3AZ7juTRQdTIhqbiWw5dGpAEL7kcMANltb2T6QWqBnFXucM9a"/>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="px-2 py-0.5 bg-secondary-fixed text-on-secondary-fixed-variant text-[9px] font-bold uppercase tracking-wider rounded">Accredited</span>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-[9px] font-bold uppercase tracking-wider rounded">98% Placement</span>
+</div>
+<h4 class="font-headline text-xl mb-2">Metropolitan Health Institute</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Recognized for excellence in venipuncture technique and clinical patient care standards.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl">
+<div class="w-10 h-10 bg-surface-container-low rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">biotech</span>
+</div>
+<h5 class="font-headline text-md leading-tight mb-2">Vanguard Medical</h5>
+<p class="text-[10px] text-on-surface-variant">Top-tier lab access and modern sims.</p>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl">
+<div class="w-10 h-10 bg-surface-container-low rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary">science</span>
+</div>
+<h5 class="font-headline text-md leading-tight mb-2">Clinical Core</h5>
+<p class="text-[10px] text-on-surface-variant">Fast-track programs for professionals.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Clinical Path Section -->
+<section class="py-16 px-6">
+<div class="text-center mb-12">
+<span class="font-label text-[10px] text-outline font-semibold uppercase tracking-[0.2em]">Framework</span>
+<h3 class="font-headline text-3xl mt-2 italic">The Clinical Path</h3>
+</div>
+<div class="space-y-12 relative">
+<!-- Connecting Line -->
+<div class="absolute left-4 top-4 bottom-4 w-px bg-outline-variant/30"></div>
+<!-- Path Step 1 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-lowest border border-secondary flex items-center justify-center z-10">
+<span class="text-xs font-bold text-secondary">01</span>
+</div>
+<h4 class="font-headline text-lg font-semibold mb-1">Curation &amp; Selection</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Browse verified institutions meeting national accreditation standards for laboratory excellence.</p>
+</div>
+<!-- Path Step 2 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-lowest border border-secondary flex items-center justify-center z-10">
+<span class="text-xs font-bold text-secondary">02</span>
+</div>
+<h4 class="font-headline text-lg font-semibold mb-1">Didactic Mastery</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Engage in rigorous classroom study focusing on anatomy, physiology, and legal medical ethics.</p>
+</div>
+<!-- Path Step 3 -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-surface-container-lowest border border-secondary flex items-center justify-center z-10">
+<span class="text-xs font-bold text-secondary">03</span>
+</div>
+<h4 class="font-headline text-lg font-semibold mb-1">Clinical Rotation</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Finalize your journey through hands-on practice in high-volume hospital environments.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 mb-20 bg-slate-100 flex flex-col items-center space-y-6">
+<div class="font-serif italic text-lg text-slate-900">PhlebGuide</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-sans text-xs text-slate-600 no-underline hover:text-slate-900 transition-all" href="#">Accreditation</a>
+<a class="font-sans text-xs text-slate-600 no-underline hover:text-slate-900 transition-all" href="#">Privacy Policy</a>
+<a class="font-sans text-xs text-slate-600 no-underline hover:text-slate-900 transition-all" href="#">Contact Support</a>
+</nav>
+<p class="font-sans text-xs leading-relaxed text-center text-slate-600">
+                © 2024 Clinical Excellence Phlebotomy Directory. Editorial Authority in Healthcare.
+            </p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl bg-white shadow-[0_-4px_20px_0_rgba(15,23,42,0.05)] md:hidden">
+<div class="flex justify-around items-center px-4 pb-6 pt-3 w-full">
+<div class="flex flex-col items-center justify-center bg-blue-50 text-blue-700 rounded-xl px-3 py-1.5 transition-colors">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Schools</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1.5 hover:text-blue-600">
+<span class="material-symbols-outlined mb-1">biotech</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Programs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1.5 hover:text-blue-600">
+<span class="material-symbols-outlined mb-1">assignment_turned_in</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Requirements</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-3 py-1.5 hover:text-blue-600">
+<span class="material-symbols-outlined mb-1">account_circle</span>
+<span class="font-sans text-[10px] font-medium uppercase tracking-wider">Profile</span>
+</div>
+</div>
+</nav>
+</body></html>

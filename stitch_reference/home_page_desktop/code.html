@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PhlebGuide | Clinical Excellence in Phlebotomy Education</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#131b2e",
+              "surface-bright": "#f7f9fb",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001a42",
+              "surface": "#f7f9fb",
+              "on-tertiary": "#ffffff",
+              "on-background": "#191c1e",
+              "on-primary-container": "#7c839b",
+              "tertiary-container": "#0b1c30",
+              "inverse-surface": "#2d3133",
+              "primary": "#000000",
+              "tertiary": "#000000",
+              "on-secondary-container": "#fefcff",
+              "primary-fixed": "#dae2fd",
+              "surface-container": "#eceef0",
+              "tertiary-fixed": "#d3e4fe",
+              "secondary-fixed": "#d8e2ff",
+              "on-error-container": "#93000a",
+              "outline": "#76777d",
+              "surface-container-low": "#f2f4f6",
+              "surface-container-highest": "#e0e3e5",
+              "primary-fixed-dim": "#bec6e0",
+              "on-tertiary-container": "#75859d",
+              "on-secondary": "#ffffff",
+              "secondary": "#0058be",
+              "on-tertiary-fixed": "#0b1c30",
+              "on-surface-variant": "#45464d",
+              "surface-tint": "#565e74",
+              "surface-variant": "#e0e3e5",
+              "background": "#f7f9fb",
+              "outline-variant": "#c6c6cd",
+              "on-surface": "#191c1e",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-fixed-variant": "#38485d",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "inverse-primary": "#bec6e0",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#131b2e",
+              "on-primary-fixed-variant": "#3f465c",
+              "on-secondary-fixed-variant": "#004395",
+              "secondary-container": "#2170e4",
+              "surface-dim": "#d8dadc",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#adc6ff",
+              "tertiary-fixed-dim": "#b7c8e1",
+              "surface-container-high": "#e6e8ea"
+            },
+            fontFamily: {
+              "headline": ["Newsreader", "serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      .bg-glass {
+        background: rgba(247, 249, 251, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .cta-gradient {
+        background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+      }
+      .ghost-border {
+        border: 1px solid rgba(198, 199, 205, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-medium font-['Newsreader'] text-slate-900 dark:text-slate-50 tracking-tight" href="/">PhlebGuide</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 dark:border-blue-400 pb-1" href="#">Find Programs</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors" href="#">State Directory</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors" href="#">Career Blog</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 transition-colors" href="#">Accreditation</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="cta-gradient text-on-primary px-6 py-2.5 rounded-lg font-medium text-sm scale-95 active:opacity-80 transition-transform">Request Info</button>
+</div>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
+<img alt="Clinical Environment" class="w-full h-full object-cover object-center" data-alt="Modern high-tech clinical laboratory with sterile equipment, blue ambient lighting, and professional medical staff in blurred background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClM1p9bNytVbMI_Tyff4C5Cwj28bJGUUZT3_IS25i-hWR1CxjUprzmyA-nRlRg0vusH-7Dk64z6oouWYcLHmUP4wX1M-NDNyr4yh3eW86-BbTIOeiZC8nw_Rx0m9Q5HI1dJhVDz6_1DuFuAkvZyADfmUPYG2RMlSrn1wdZvsYApq0Jw58Yy2YRMxFIKWBIUcSaMnrSibVB3hxZyZ7NWV2vv9KoCI8WqH0l9T9TyHSMSSncz-48C3VVggRp1BGXNv5TkvkESvACvIT8"/>
+</div>
+<div class="relative z-20 max-w-screen-2xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="label-md tracking-[0.2em] text-secondary font-semibold uppercase mb-6 block">Elite Medical Training</span>
+<h1 class="font-headline text-6xl md:text-7xl font-semibold text-on-surface leading-[1.1] mb-8 tracking-tight">
+                        Clinical Excellence <br/><span class="italic text-on-primary-container">Starts Here.</span>
+</h1>
+<p class="text-lg text-on-surface-variant mb-12 leading-relaxed max-w-xl">
+                        Discover the nation's premier phlebotomy certification programs. We connect aspiring professionals with accredited clinical training centers that define modern healthcare standards.
+                    </p>
+<!-- Search Box -->
+<div class="bg-white p-2 rounded-xl shadow-2xl shadow-blue-900/5 flex flex-col md:flex-row gap-2 max-w-xl ghost-border">
+<div class="flex-1 flex items-center px-4 py-3 gap-3">
+<span class="material-symbols-outlined text-outline">location_on</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline-variant" placeholder="Zip code or State" type="text"/>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/30 hidden md:block self-center"></div>
+<div class="flex-1 flex items-center px-4 py-3 gap-3">
+<span class="material-symbols-outlined text-outline">school</span>
+<select class="w-full bg-transparent border-none focus:ring-0 text-on-surface appearance-none">
+<option>Certification Level</option>
+<option>CPT-1</option>
+<option>CPT-2</option>
+</select>
+</div>
+<button class="cta-gradient text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all">
+                            Find Schools
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="py-12 bg-surface border-y border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+<p class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-4 md:mb-0">Recognized by Leading Bodies</p>
+<div class="flex flex-wrap justify-center gap-12 md:gap-20 items-center">
+<div class="font-headline text-2xl font-bold tracking-tighter">NAACLS</div>
+<div class="font-headline text-2xl font-bold tracking-tighter">ASCP</div>
+<div class="font-headline text-2xl font-bold tracking-tighter">AMT</div>
+<div class="font-headline text-2xl font-bold tracking-tighter">NHA</div>
+<div class="font-headline text-2xl font-bold tracking-tighter">ACA</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Schools -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="label-md text-secondary font-bold tracking-widest uppercase block mb-4">Top Rated Programs</span>
+<h2 class="font-headline text-5xl font-semibold tracking-tight">Featured Clinical Centers</h2>
+</div>
+<a class="text-secondary font-semibold flex items-center gap-2 group" href="#">
+                        Explore All Programs 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- School Card 1 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Medical University Campus" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern university medical campus exterior with glass facade and professional landscaping under bright clear daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx4MNRzV9YUBuqvPi5g1iEOQAy8DlxYibL-9XHm071a1WFT_fpxBVuzW_GRlOTcd7ekj0qJtrbMUsMa9P0B-kq9Pl6tTcbEt-6ZqYGwOvnsuw8B8wcbFh2HxBhDmG3WAYL6jn_Qrb2gAgGb80PMs-L7dbuWCIkIn5EQ_9fNsFQtcrc7iPsGehw532uDiyDs6Dwg7YO_wTvmKMKs0ZM7z8RvKqrG25yDKe0--YjR3JNoqzc2Ymy-EOgFP-sJt0pcBfI1sFqbedOdQ2O"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">NAACLS Accredited</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-semibold">St. Jude Medical Institute</h3>
+<span class="text-on-surface-variant font-medium text-sm">$4,200 Est.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-6">
+<span class="material-symbols-outlined text-base">location_on</span>
+                                Boston, MA
+                            </div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+</span>
+<button class="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-secondary transition-colors">View Program</button>
+</div>
+</div>
+</div>
+<!-- School Card 2 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Clinical Lab" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Internal view of a state-of-the-art phlebotomy training lab with clean white stations and clinical chairs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASf7x_SAzhgQl-rugrlBrpdcXbYht9lLgja4A4HGLlNCw6NQhUAmrlO-q6XqLIFJ4TmOA-mQtASEkIzc-CdaazuwHlbgGIG5thbtvGD-tA-uSBqNy7KLYtIJRo9qm-0Ktz6OCBQ-MRzCE851MPwuBFDtO2JnQ63v4d2Yq2Bd7DIvuTItoDA-zPipBgns4NiJUEi5G2OWrQFTPGO14FRE7QxH1FRXx6TCb6EZFbbsrsrNwUrzunxvs-VS4SsjUaWWUxG3AZMxzoeklF"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">ASCP Partner</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-semibold">Pacific Health Academy</h3>
+<span class="text-on-surface-variant font-medium text-sm">$3,850 Est.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-6">
+<span class="material-symbols-outlined text-base">location_on</span>
+                                San Diego, CA
+                            </div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+</span>
+<button class="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-secondary transition-colors">View Program</button>
+</div>
+</div>
+</div>
+<!-- School Card 3 -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<img alt="Medical Student" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Candid shot of a medical student in professional blue scrubs practicing with laboratory equipment in a bright clinical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAeHakIzAuyZUqvl4rcWFvai_c18DqV9CuKE0CMS-jf2gR2hjqYHZcZk6eSW_kA8Z5e8EkWK80jvypn-ypzJpKII42Q081UAl16iW_q4dlCXhLXOzFoAbxJ9wgNJU_zM8B0DoRIy9qLqhQzn58IP-K3M9zyBt_mKY3V8M9hjx8IIspMN--1FD6u9BA2cUMjHL3P5inzmtLvRG-OiTQ6b_75K9AY9yPvXp_4gG_-xcanlo7o1npHj2VQxEqS1D6cRtVS_KdoVdEKLQ9"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">NHA Certified</div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline text-2xl font-semibold">Midwest Clinical Center</h3>
+<span class="text-on-surface-variant font-medium text-sm">$4,500 Est.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm mb-6">
+<span class="material-symbols-outlined text-base">location_on</span>
+                                Chicago, IL
+                            </div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">5.0</span>
+</span>
+<button class="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-secondary transition-colors">View Program</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Clinical Path (Steps) -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-24 max-w-2xl mx-auto">
+<h2 class="font-headline text-5xl font-semibold mb-6">The Clinical Path</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">A streamlined approach to entering the phlebotomy profession with confidence and prestige.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+<!-- Connector line -->
+<div class="hidden md:block absolute top-12 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-outline-variant to-transparent z-0"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-outline-variant/20">
+<span class="material-symbols-outlined text-4xl text-secondary">search_check</span>
+</div>
+<span class="label-md text-secondary font-bold mb-4">Step 01</span>
+<h4 class="font-headline text-2xl font-semibold mb-4">Select Accreditation</h4>
+<p class="text-on-surface-variant leading-relaxed">Choose from NAACLS or ASCP-aligned programs that meet your state's rigorous requirements.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-outline-variant/20">
+<span class="material-symbols-outlined text-4xl text-secondary">biotech</span>
+</div>
+<span class="label-md text-secondary font-bold mb-4">Step 02</span>
+<h4 class="font-headline text-2xl font-semibold mb-4">Complete Training</h4>
+<p class="text-on-surface-variant leading-relaxed">Undergo hands-on clinical rotations at our partner medical centers and specialized labs.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center mb-8 border border-outline-variant/20">
+<span class="material-symbols-outlined text-4xl text-secondary">verified_user</span>
+</div>
+<span class="label-md text-secondary font-bold mb-4">Step 03</span>
+<h4 class="font-headline text-2xl font-semibold mb-4">Earn Certification</h4>
+<p class="text-on-surface-variant leading-relaxed">Pass your national exam and join the elite ranks of certified phlebotomy technicians.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Clinical Insights (Blog) -->
+<section class="py-32 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-4 lg:sticky lg:top-32">
+<span class="label-md text-secondary font-bold tracking-widest uppercase block mb-4">The Journal</span>
+<h2 class="font-headline text-5xl font-semibold tracking-tight mb-8">Clinical Insights</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+                            Expert commentary on phlebotomy trends, medical technology, and career advancement in the diagnostic sector.
+                        </p>
+<button class="cta-gradient text-white px-8 py-3.5 rounded-lg font-semibold flex items-center gap-2">
+                            Read Full Journal <span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Post 1 -->
+<article class="group">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6 ghost-border">
+<img alt="Microscope Close-up" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Macro view of a professional laboratory microscope and glass slides in a clean, blue-tinted clinical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfNwbUmx1y6g_swFB0YHq5EaKyuHucbscXzgOkely4F5DXR1WdjbWBBZ52KoyhC7W45zCpqXlPhOdryKpVZKDQuWxjGjUkK56iW11Eo1cY6n9c5TrkZYV2uCYslm7TaXjcWdjareoinYMYqTR6EajHD1_SnCm0xMum-6ZIIRqfOy5TWVYPKrnYoCQ9lgx7tXiX8NECdggTj_nCjFVLU3h2Wp4LtPmB2-2zYGSY2kQh5jZn_zlnDbc5CUm9Mh-x21N8U5-V_1lD5g1u"/>
+</div>
+<span class="label-md text-on-tertiary-container font-bold uppercase tracking-wider mb-3 block">Career Strategy</span>
+<h3 class="font-headline text-3xl font-semibold mb-4 leading-snug group-hover:text-secondary transition-colors italic">The Evolution of Phlebotomy in Precision Medicine</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">How diagnostic collection techniques are changing to meet the demands of personalized genomic healthcare.</p>
+<span class="text-xs font-bold text-outline-variant uppercase tracking-widest">Oct 12, 2023 • 6 Min Read</span>
+</article>
+<!-- Post 2 -->
+<article class="group">
+<div class="aspect-square rounded-2xl overflow-hidden mb-6 ghost-border">
+<img alt="Medical Vials" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Symmetric arrangement of clinical test tubes and glass vials with blue labels in a professional medical storage rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOnH0VakW6k3dXUcONvGwQlE4seSimmLjeviqn8oByBUjqCc0ZZRjIM9qApdB2VU3SMDck7REtLJerY8QousIy005eJbwuEkqQ4GNLcRi6C1vrEtvb1zAtyLltx5Hr9J6wyD7kt0KKelZeYfUo5NNaK5dlnEzFpPx9gVRy_yszDQWNTmoqPBU5vO8_m7xo9BR2lPuU5Sb7yjKYQlaqSymX47itNQv9_TCtVpy1uNaSslz0H5dD3Nk59F1JBuZwJUstWPTDpIJGvHMe"/>
+</div>
+<span class="label-md text-on-tertiary-container font-bold uppercase tracking-wider mb-3 block">Certification</span>
+<h3 class="font-headline text-3xl font-semibold mb-4 leading-snug group-hover:text-secondary transition-colors italic">ASCP vs. AMT: Choosing Your National Credential</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">A comprehensive comparison of the industry’s most respected certification bodies for clinical technicians.</p>
+<span class="text-xs font-bold text-outline-variant uppercase tracking-widest">Sep 28, 2023 • 10 Min Read</span>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="mb-32 px-8">
+<div class="max-w-screen-2xl mx-auto bg-primary-container rounded-[2rem] p-16 md:p-24 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full scale-150 rotate-12" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="150" stroke="white" stroke-dasharray="10 10" stroke-width="0.5"></circle>
+<circle cx="200" cy="200" r="100" stroke="white" stroke-dasharray="5 5" stroke-width="0.5"></circle>
+</svg>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline text-5xl md:text-6xl font-semibold text-white mb-8 tracking-tight">Ready to join the <br/><span class="italic text-secondary-fixed">clinical frontlines?</span></h2>
+<p class="text-on-primary-container text-xl mb-12 leading-relaxed">Get our comprehensive 'Phlebotomy Career Roadmap' and weekly insights delivered directly to your inbox.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="bg-white/5 border border-white/10 text-white px-6 py-4 rounded-xl flex-1 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all placeholder:text-white/30" placeholder="Professional email address" type="email"/>
+<button class="cta-gradient text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl hover:shadow-blue-500/30 transition-all">Subscribe Now</button>
+</form>
+<p class="text-white/40 text-sm mt-6">By subscribing, you agree to our <a class="underline" href="#">Privacy Policy</a>.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="text-xl font-semibold font-['Newsreader'] text-slate-900 dark:text-slate-50 mb-6">PhlebGuide</div>
+<p class="font-['Inter'] text-sm tracking-wide text-slate-500 dark:text-slate-400 mb-8 max-w-xs">© 2024 PhlebGuide. Clinical Excellence in Phlebotomy Education.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">linked_camera</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer">mail</span>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest text-slate-900 dark:text-slate-50 mb-6">Education</h5>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">Program Directory</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">State Requirements</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">Certification Prep</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest text-slate-900 dark:text-slate-50 mb-6">Resources</h5>
+<ul class="space-y-4 font-['Inter'] text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">Career Center</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest text-slate-900 dark:text-slate-50 mb-6">Contact</h5>
+<p class="font-['Inter'] text-sm tracking-wide text-slate-500 dark:text-slate-400">
+                    Questions about clinical training? <br/>
+<a class="text-blue-800 dark:text-blue-300 font-medium" href="mailto:info@phlebguide.com">info@phlebguide.com</a>
+</p>
+</div>
+</div>
+</footer>
+</body></html>
