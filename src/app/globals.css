@@ -1,38 +1,92 @@
-@tailwind base;
-@tailwind components; 
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    background-color: #f7f9fb;
-    color: #191c1e;
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
-  }
+@theme {
+  /* Color Tokens - Clinical Excellence Design System */
+  --color-primary-container: #131b2e;
+  --color-surface-bright: #f7f9fb;
+  --color-on-primary: #ffffff;
+  --color-on-secondary-fixed: #001a42;
+  --color-surface: #f7f9fb;
+  --color-on-tertiary: #ffffff;
+  --color-on-background: #191c1e;
+  --color-on-primary-container: #7c839b;
+  --color-tertiary-container: #0b1c30;
+  --color-inverse-surface: #2d3133;
+  --color-primary: #000000;
+  --color-tertiary: #000000;
+  --color-on-secondary-container: #fefcff;
+  --color-primary-fixed: #dae2fd;
+  --color-surface-container: #eceef0;
+  --color-tertiary-fixed: #d3e4fe;
+  --color-secondary-fixed: #d8e2ff;
+  --color-on-error-container: #93000a;
+  --color-outline: #76777d;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-highest: #e0e3e5;
+  --color-primary-fixed-dim: #bec6e0;
+  --color-on-tertiary-container: #75859d;
+  --color-on-secondary: #ffffff;
+  --color-secondary: #0058be;
+  --color-on-tertiary-fixed: #0b1c30;
+  --color-on-surface-variant: #45464d;
+  --color-surface-tint: #565e74;
+  --color-surface-variant: #e0e3e5;
+  --color-background: #f7f9fb;
+  --color-outline-variant: #c6c6cd;
+  --color-on-surface: #191c1e;
+  --color-inverse-on-surface: #eff1f3;
+  --color-on-tertiary-fixed-variant: #38485d;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-inverse-primary: #bec6e0;
+  --color-error-container: #ffdad6;
+  --color-on-primary-fixed: #131b2e;
+  --color-on-primary-fixed-variant: #3f465c;
+  --color-on-secondary-fixed-variant: #004395;
+  --color-secondary-container: #2170e4;
+  --color-surface-dim: #d8dadc;
+  --color-surface-container-lowest: #ffffff;
+  --color-secondary-fixed-dim: #adc6ff;
+  --color-tertiary-fixed-dim: #b7c8e1;
+  --color-surface-container-high: #e6e8ea;
 
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
-  }
+  /* Font Families */
+  --font-serif: "var(--font-newsreader)", "Newsreader", serif;
+  --font-body: "var(--font-inter)", "Inter", sans-serif;
+  --font-inter: "var(--font-inter)", "Inter", sans-serif;
+  --font-headline: "var(--font-newsreader)", "Newsreader", serif;
+  --font-label: "var(--font-inter)", "Inter", sans-serif;
 }
 
-@layer components {
-  .cta-gradient {
-    background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
-  }
-  
-  .ghost-border {
-    border: 1px solid rgba(198, 199, 205, 0.15);
-  }
+/* Base styles */
+body {
+  background-color: #f7f9fb;
+  color: #191c1e;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
 
-  .editorial-shadow {
-    box-shadow: 0 32px 64px -5px rgba(25, 28, 30, 0.06);
-  }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
 
-  .glass-nav {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
+/* Custom Utilities */
+.cta-gradient {
+  background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+}
+
+.ghost-border {
+  border: 1px solid rgba(198, 199, 205, 0.15);
+}
+
+.editorial-shadow {
+  box-shadow: 0 32px 64px -5px rgba(25, 28, 30, 0.06);
+}
+
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 ::selection {
