@@ -117,8 +117,8 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
                     <div>
                       <span className="text-on-surface-variant font-medium">Tuition:</span>
                       <div className="text-secondary font-bold">
-                        ${school.tuition_low.toLocaleString()}
-                        {school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
+                        {school.tuition_low != null ? `$${school.tuition_low.toLocaleString()}` : 'Contact School'}
+                        {school.tuition_high != null && school.tuition_low != null && school.tuition_high > school.tuition_low && ` - $${school.tuition_high.toLocaleString()}`}
                       </div>
                     </div>
                     <div>
@@ -152,7 +152,7 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
                 <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-secondary transition-colors">{school.name}</h3>
                 <div className="text-on-surface-variant text-sm mb-4 font-medium">{school.program_type}</div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-secondary font-bold">${school.tuition_low.toLocaleString()}</span>
+                  <span className="text-secondary font-bold">{school.tuition_low != null ? `$${school.tuition_low.toLocaleString()}` : 'Contact'}</span>
                   <span className="text-on-surface-variant font-medium">{school.program_length_display}</span>
                 </div>
               </Link>

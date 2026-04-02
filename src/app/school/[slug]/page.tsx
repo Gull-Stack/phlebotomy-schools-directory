@@ -92,10 +92,10 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="bg-surface-container-lowest rounded-xl p-6 text-center shadow-sm ghost-border">
               <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-                {school.tuition_low ? (
+                {school.tuition_low != null ? (
                   <>
                     ${school.tuition_low.toLocaleString()}
-                    {school.tuition_high && school.tuition_high > school.tuition_low && (
+                    {school.tuition_high != null && school.tuition_high > school.tuition_low && (
                       <div className="text-lg text-on-surface-variant"> - ${school.tuition_high.toLocaleString()}</div>
                     )}
                   </>
@@ -148,7 +148,7 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
                 </div>
                 <div className="flex justify-between items-center border-b border-outline-variant/10 pb-2">
                   <dt className="text-on-surface-variant font-medium">Tuition Range</dt>
-                  <dd className="font-bold text-secondary">${school.tuition_low.toLocaleString()} - ${school.tuition_high.toLocaleString()}</dd>
+                  <dd className="font-bold text-secondary">{school.tuition_low != null ? `$${school.tuition_low.toLocaleString()}` : 'N/A'} - {school.tuition_high != null ? `$${school.tuition_high.toLocaleString()}` : 'N/A'}</dd>
                 </div>
                 <div className="flex justify-between items-center border-b border-outline-variant/10 pb-2">
                   <dt className="text-on-surface-variant font-medium">Financial Aid</dt>
