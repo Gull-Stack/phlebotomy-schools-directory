@@ -1,0 +1,25 @@
+{
+  "name": "PhlebGuide",
+  "url": "https://phlebguide.com",
+  "category": "Education Directory / Healthcare Career Resources",
+  "description": "The nation's most comprehensive phlebotomy school directory. Compare 1,000+ accredited phlebotomy training programs by state, including tuition, program length, certifications, externship hours, and financial aid options.",
+  "founded": "2026",
+  "services": [
+    "Phlebotomy school directory and comparison",
+    "State-by-state phlebotomy program listings",
+    "Tuition and financial aid information",
+    "Certification preparation resources",
+    "Career guidance for aspiring phlebotomists"
+  ],
+  "coverage": "United States — all 50 states",
+  "content_types": [
+    "School profiles with tuition, accreditation, and program details",
+    "State directory pages with school listings and statistics",
+    "Blog articles on phlebotomy career paths and certification",
+    "Phlebotomy salary and job outlook data"
+  ],
+  "contact": {
+    "email": "info@phlebguide.com",
+    "website": "https://phlebguide.com"
+  }
+}

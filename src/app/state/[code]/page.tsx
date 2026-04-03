@@ -18,8 +18,11 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
   const stateName = stateNames[stateCode];
   if (!stateName) return { title: "State Not Found" };
   return {
-    title: `Phlebotomy Schools in ${stateName} | ${stateCode} Phlebotomy Training Programs`,
-    description: `Find accredited phlebotomy training programs in ${stateName}. Compare tuition, program length, and certification options for phlebotomy schools near you.`
+    title: `Phlebotomy Schools in ${stateName} (2026) — Tuition, Programs & Certification`,
+    description: `Compare accredited phlebotomy schools in ${stateName}. Find tuition costs, program lengths, externship hours, and certification prep for ${stateCode} phlebotomy training programs.`,
+    alternates: {
+      canonical: `https://phlebguide.com/state/${code}`,
+    },
   };
 }
 
@@ -35,11 +38,36 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
   const { data: natData } = await supabaseAdmin.from("schools").select("*").eq("national", true).order("name");
   const nationalSchools = (natData || []) as School[];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://phlebguide.com" },
+      { "@type": "ListItem", position: 2, name: `Phlebotomy Schools in ${stateName}` },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Phlebotomy Schools in ${stateName}`,
+    numberOfItems: stateSchools.length,
+    itemListElement: stateSchools.slice(0, 20).map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: s.name,
+      url: `https://phlebguide.com/school/${s.slug}`,
+    })),
+  };
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
     <main className="min-h-screen bg-surface text-on-surface font-body">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
-        <div className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+        <div className="flex justify-between items-center w-full px-6 py-3.5 max-w-6xl mx-auto">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-2xl font-medium font-serif text-slate-900 tracking-tight">PhlebGuide</Link>
             <nav className="hidden md:flex items-center gap-6">
@@ -56,8 +84,8 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       </header>
 
       {/* Breadcrumb */}
-      <div className="bg-surface-container-low py-4 px-8">
-        <div className="max-w-screen-2xl mx-auto text-sm text-on-surface-variant">
+      <div className="bg-surface-container-low py-4 px-6">
+        <div className="max-w-6xl mx-auto text-sm text-on-surface-variant">
           <Link href="/" className="hover:text-secondary font-medium">Home</Link>
           {" / "}
           <span className="font-medium text-on-surface">{stateName}</span>
@@ -65,8 +93,8 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       </div>
 
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 px-8">
-        <div className="max-w-screen-2xl mx-auto">
+      <section className="relative overflow-hidden py-12 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="max-w-2xl">
             <span className="text-xs text-secondary font-bold tracking-[0.1em] uppercase block mb-6">State Directory / {stateName}</span>
             <h1 className="font-serif text-6xl md:text-7xl font-semibold leading-tight mb-8 text-on-surface">
@@ -98,8 +126,8 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       </section>
 
       {stateSchools.length > 0 && (
-        <section className="py-20 px-8 bg-surface">
-          <div className="max-w-screen-2xl mx-auto">
+        <section className="py-12 px-6 bg-surface">
+          <div className="max-w-6xl mx-auto">
             <h2 className="font-serif text-5xl font-semibold mb-12 text-center">{stateName} Phlebotomy Programs</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {stateSchools.map(school => (
@@ -141,8 +169,8 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       )}
 
       {/* Online Programs */}
-      <section className="py-20 px-8 bg-surface-container-low">
-        <div className="max-w-screen-2xl mx-auto">
+      <section className="py-12 px-6 bg-surface-container-low">
+        <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-5xl font-semibold mb-6 text-center">Online Programs Available in {stateName}</h2>
           <p className="text-lg text-on-surface-variant mb-12 text-center max-w-2xl mx-auto">These accredited online programs accept students from {stateName}</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -162,7 +190,7 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
       </section>
 
       {/* Requirements */}
-      <section className="py-20 px-8 bg-surface">
+      <section className="py-12 px-6 bg-surface">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-5xl font-semibold mb-8 text-center">Phlebotomy Requirements in {stateName}</h2>
           <div className="bg-surface-container-low rounded-2xl p-8 ghost-border">
@@ -180,7 +208,7 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
 
       {/* Footer */}
       <footer className="bg-slate-50 w-full border-t border-slate-200">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto text-sm tracking-wide">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 py-12 max-w-6xl mx-auto text-sm tracking-wide">
           <div className="col-span-2 md:col-span-1">
             <div className="text-xl font-semibold font-serif text-slate-900 mb-6">PhlebGuide</div>
             <p className="text-slate-500 mb-8 max-w-xs">&copy; 2026 PhlebGuide. Clinical Excellence in Phlebotomy Education.</p>
@@ -218,5 +246,6 @@ export default async function StatePage({ params }: { params: Promise<{ code: st
         </div>
       </footer>
     </main>
+    </>
   );
 }

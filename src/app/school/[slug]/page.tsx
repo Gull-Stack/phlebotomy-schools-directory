@@ -18,9 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!school) return { title: "School Not Found" };
   
+  const tuitionStr = school.tuition_low != null ? `$${school.tuition_low.toLocaleString()}${school.tuition_high != null && school.tuition_high > school.tuition_low ? `-$${school.tuition_high.toLocaleString()}` : ''}` : 'Contact for pricing';
+  
   return {
-    title: `${school.name} Phlebotomy Program | Tuition, Reviews & Info`,
-    description: `${school.name} phlebotomy training program in ${school.city}, ${school.state}. Tuition: $${school.tuition_low ?? 'N/A'}-$${school.tuition_high ?? 'N/A'}. ${school.program_length_display}. ${(school.accreditation || []).join(", ")} accredited.`
+    title: `${school.name} Phlebotomy Program — Tuition, Accreditation & Reviews`,
+    description: `${school.name} phlebotomy training in ${school.city}, ${school.state}. Tuition: ${tuitionStr}. ${school.program_length_display}. ${(school.accreditation || []).join(", ")} accredited. Compare programs at PhlebGuide.`,
+    alternates: {
+      canonical: `https://phlebguide.com/school/${slug}`,
+    },
   };
 }
 
@@ -30,8 +35,60 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
   const school = data as School | null;
   
   if (!school) notFound();
-  
+
+  const tuitionStr = school.tuition_low != null ? `$${school.tuition_low.toLocaleString()}${school.tuition_high != null && school.tuition_high > school.tuition_low ? `-$${school.tuition_high.toLocaleString()}` : ''}` : undefined;
+
+  const schoolSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: school.name,
+    url: school.website || `https://phlebguide.com/school/${slug}`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: school.city,
+      addressRegion: school.state,
+      addressCountry: "US",
+    },
+    description: school.description || `${school.name} offers ${school.program_type} phlebotomy training in ${school.city}, ${school.state}.`,
+  };
+
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: `Phlebotomy Training Program`,
+    description: `Phlebotomy certification training at ${school.name} in ${school.city}, ${school.state}. ${school.program_length_display}.`,
+    provider: {
+      "@type": "EducationalOrganization",
+      name: school.name,
+      sameAs: school.website || undefined,
+    },
+    ...(tuitionStr && {
+      offers: {
+        "@type": "Offer",
+        category: "Tuition",
+        price: school.tuition_low,
+        priceCurrency: "USD",
+      },
+    }),
+    educationalCredentialAwarded: (school.certifications_prepared || []).join(", ") || "Phlebotomy Certification",
+    timeRequired: school.program_length_display || undefined,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://phlebguide.com" },
+      ...(!school.national ? [{ "@type": "ListItem", position: 2, name: stateNames[school.state_code] || school.state, item: `https://phlebguide.com/state/${school.state_code.toLowerCase()}` }] : []),
+      { "@type": "ListItem", position: school.national ? 2 : 3, name: school.name },
+    ],
+  };
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <main className="min-h-screen bg-surface text-on-surface font-body">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
@@ -267,5 +324,6 @@ export default async function SchoolPage({ params }: { params: Promise<{ slug: s
         </div>
       </footer>
     </main>
+    </>
   );
 }

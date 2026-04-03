@@ -23,7 +23,7 @@ export default async function Home() {
     <main className="min-h-screen bg-surface text-on-surface font-body">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-xl sticky top-0 z-50 shadow-sm">
-        <div className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+        <div className="flex justify-between items-center w-full px-6 py-4 max-w-6xl mx-auto">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-2xl font-medium font-serif text-slate-900 tracking-tight">PhlebGuide</Link>
             <nav className="hidden md:flex items-center gap-6">
@@ -50,7 +50,7 @@ export default async function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
           <div className="w-full h-full bg-gradient-to-br from-blue-50 to-slate-100"></div>
         </div>
-        <div className="relative z-20 max-w-screen-2xl mx-auto px-8 w-full">
+        <div className="relative z-20 max-w-6xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
             <span className="text-xs tracking-[0.2em] text-secondary font-semibold uppercase mb-6 block">Elite Medical Training</span>
             <h1 className="font-serif text-6xl md:text-7xl font-semibold text-on-surface leading-[1.1] mb-8 tracking-tight">
@@ -81,7 +81,7 @@ export default async function Home() {
               </div>
               <Link 
                 href="#schools"
-                className="cta-gradient text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all text-center"
+                className="cta-gradient text-white px-6 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all text-center"
               >
                 Find Schools
               </Link>
@@ -92,10 +92,10 @@ export default async function Home() {
 
       {/* Trust Bar */}
       <section className="py-12 bg-surface border-y border-outline-variant/10">
-        <div className="max-w-screen-2xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
             <p className="text-xs tracking-widest uppercase text-on-surface-variant mb-4 md:mb-0">Recognized by Leading Bodies</p>
-            <div className="flex flex-wrap justify-center gap-12 md:gap-20 items-center">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-20 items-center">
               <div className="font-serif text-2xl font-bold tracking-tighter">NAACLS</div>
               <div className="font-serif text-2xl font-bold tracking-tighter">ASCP</div>
               <div className="font-serif text-2xl font-bold tracking-tighter">AMT</div>
@@ -108,7 +108,7 @@ export default async function Home() {
 
       {/* Featured Schools */}
       <section id="schools" className="py-32 bg-surface">
-        <div className="max-w-screen-2xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
               <span className="text-xs text-secondary font-bold tracking-widest uppercase block mb-4">Top Rated Programs</span>
@@ -159,12 +159,12 @@ export default async function Home() {
 
       {/* The Clinical Path (Steps) */}
       <section className="py-32 bg-surface-container-low">
-        <div className="max-w-screen-2xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-24 max-w-2xl mx-auto">
             <h2 className="font-serif text-5xl font-semibold mb-6">The Clinical Path</h2>
             <p className="text-on-surface-variant text-lg leading-relaxed">A streamlined approach to entering the phlebotomy profession with confidence and prestige.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
             {/* Connector line */}
             <div className="hidden md:block absolute top-12 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-outline-variant to-transparent z-0"></div>
             <div className="relative z-10 flex flex-col items-center text-center">
@@ -197,7 +197,7 @@ export default async function Home() {
 
       {/* Browse by State */}
       <section id="states" className="py-32 bg-surface">
-        <div className="max-w-screen-2xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-xs text-secondary font-bold tracking-widest uppercase block mb-4">State Directory</span>
             <h2 className="font-serif text-5xl font-semibold mb-6">Browse by State</h2>
@@ -222,7 +222,7 @@ export default async function Home() {
 
       {/* Why Phlebotomy */}
       <section className="py-32 bg-surface-container-low">
-        <div className="max-w-screen-2xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-xs text-secondary font-bold tracking-widest uppercase block mb-4">Career Advantages</span>
             <h2 className="font-serif text-5xl font-semibold mb-6">Why Choose Phlebotomy?</h2>
@@ -261,8 +261,8 @@ export default async function Home() {
       </section>
 
       {/* Newsletter / CTA */}
-      <section className="mb-32 px-8">
-        <div className="max-w-screen-2xl mx-auto bg-primary-container rounded-[2rem] p-16 md:p-24 overflow-hidden relative">
+      <section className="mb-32 px-6">
+        <div className="max-w-6xl mx-auto bg-primary-container rounded-[2rem] p-10 md:p-14 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
             <svg className="w-full h-full scale-150 rotate-12" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
               <circle cx="200" cy="200" r="150" stroke="white" strokeDasharray="10 10" strokeWidth="0.5"></circle>
@@ -285,8 +285,8 @@ export default async function Home() {
 
       {/* Blog CTA */}
       <section className="py-32 bg-surface">
-        <div className="max-w-screen-2xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-32">
               <span className="text-xs text-on-tertiary-container font-bold tracking-widest uppercase block mb-4">The Journal</span>
               <h2 className="font-serif text-5xl font-semibold tracking-tight mb-8">Clinical Insights</h2>
@@ -295,13 +295,13 @@ export default async function Home() {
               </p>
               <Link 
                 href="/blog"
-                className="cta-gradient text-white px-8 py-3.5 rounded-lg font-semibold inline-flex items-center gap-2"
+                className="cta-gradient text-white px-6 py-3.5 rounded-lg font-semibold inline-flex items-center gap-2"
               >
                 Read Full Journal 
                 <span className="material-symbols-outlined">open_in_new</span>
               </Link>
             </div>
-            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <article className="group">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-blue-50 to-slate-100 ghost-border"></div>
                 <span className="text-xs text-on-tertiary-container font-bold uppercase tracking-wider mb-3 block">Career Strategy</span>
@@ -327,7 +327,7 @@ export default async function Home() {
 
       {/* Footer */}
       <footer className="bg-slate-50 w-full border-t border-slate-200">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto text-sm tracking-wide">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-6 py-12 max-w-6xl mx-auto text-sm tracking-wide">
           <div className="col-span-2 md:col-span-1">
             <div className="text-xl font-semibold font-serif text-slate-900 mb-6">PhlebGuide</div>
             <p className="text-slate-500 mb-8 max-w-xs">&copy; 2026 PhlebGuide. Clinical Excellence in Phlebotomy Education.</p>
